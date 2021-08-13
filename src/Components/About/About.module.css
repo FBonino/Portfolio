@@ -1,0 +1,18 @@
+.container {
+	margin-top: 114vh;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.subcontainer {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.profilePic {
+	border-radius: 9999px;
+	width: 13rem;
+	height: 13rem;
+}

@@ -1,0 +1,17 @@
+.container {
+	margin: 25rem;
+	display: flex;
+	justify-content: center;
+	height: 30vh;
+}
+
+.icon {
+	width: fit-content;
+	height: fit-content;
+	border-radius: 9999px;
+	padding: 0.25rem;
+	display: flex;
+	align-items: center;
+	border: 2px solid green;
+	margin: 0 1rem;
+}

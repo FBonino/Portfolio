@@ -1,39 +1,45 @@
 .container {
+	background-color: white;
+	position: fixed;
+	top: 0;
+	width: 100%;
 	display: flex;
-	flex-direction: column;
-	align-items: center	;
-	justify-content: space-around;
-	width: fit-content;
-	height: 100%;
-	min-height: 100vh;
+	align-items: center;
+	justify-content: space-between;
 	box-shadow: 0 0 0.75em rgba(51, 51, 51, 0.815);
+	padding: 1rem;
+	z-index: 2;
 }
 
 .subcontainer {
 	display: flex;
-	flex-direction: column;
-	margin: 4vh 0;
-}
-
-.subcontainer > * {
-	padding: 0 0.25vw;
-	margin: 1.5vh 0;
-}
-
-.landingDiv {
-	margin: 0;
-	border-bottom: 1px solid black;
-	width: 100%;
-	padding: 5vh 0;
-}
-
-.icon {
-	width: 32px;
-	height: 32px;
-	border-radius: 9999px;
-	padding: 0.2em;
-	display: flex;
 	align-items: center;
-	justify-content: center;
+	margin: 0 2.5rem;
+}
+
+.subcontainer > .link {
+	margin: 0 1.5rem;
+}
+
+.link {
+	text-decoration: none;
+	color: black;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.link:hover {
+	transform: scale(1.05);
+}
+
+.active {
+	transform: scale(1.05);
+	text-decoration: underline 2px solid black;
+}
+
+.languages {
+	padding: 0;
+	border-radius: 9999;
+	border: none;
 	background-color: transparent;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import style from "./Projects.module.css";
 import ReactCardFlip from 'react-card-flip';
 import weather from "../assets/weather.png";
@@ -10,12 +10,12 @@ const Projects = () => {
 	const [countriesFlipped, setContriesFlipped] = useState(false);
 	const [moviesFlipped, setMoviesFlipped] = useState(false);
 	const [weatherFlipped, setWeatherFlipped] = useState(false);
-	const containerStyle = { height: "22vh", width: "20vw", boxShadow: "0 0 0.8em black", minWidth: "17em", margin: "1vh 2vw", borderRadius: "1em", minHeight: "10em" };
+	const containerStyle = { height: "22vh", width: "20vw", boxShadow: "0 0 0.4em black", minWidth: "17em", margin: "1vh 2vw", minHeight: "10em" };
 
 	return (
-		<div className={style.container}>
+		<div className={style.container} id="projects">
+			<h1> Projects </h1>
 			<div className={style.subcontainer}>
-				<h1> Full Stack Projects </h1>
 				<div className={style.projects}>
 					<ReactCardFlip containerStyle={containerStyle} isFlipped={birraFlipped} flipSpeedFrontToBack={0.8} flipSpeedBackToFront={0.4} infinite={true}>
 						<div className={style.cardDiv} onClick={() => setBirraFlipped(true)}>
@@ -52,7 +52,6 @@ const Projects = () => {
 				</div>
 			</div>
 			<div className={style.subcontainer}>
-				<h1> Frontend Projects </h1>
 				<div className={style.projects}>
 					<ReactCardFlip containerStyle={containerStyle} isFlipped={moviesFlipped} flipSpeedFrontToBack={0.8} flipSpeedBackToFront={0.4} infinite={true}>
 						<div className={style.cardDiv} onClick={() => setMoviesFlipped(true)}>
