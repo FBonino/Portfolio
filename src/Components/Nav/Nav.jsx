@@ -33,9 +33,20 @@ const selectStyle = {
 
 const Nav = () => {
 	const [isOpen, setIsOpen] = useState(false);
-	let darkMode = eval(localStorage.getItem("DarkMode"));
-	let language = localStorage.getItem("Language");
-	const options = [{ value: "English", icon: en }, { value: "Spanish", icon: es }];
+	const [isDark, setIsDark] = useState(!!localStorage.getItem("DarkMode"));
+	const [language, setLanguage] = useState(localStorage.getItem("Language"));
+	const options = [{ value: "English", icon: en }, { value: "Español", icon: es }];
+
+	const handleTheme = () => {
+		setIsDark(!isDark);
+		localStorage.setItem("DarkMode", isDark.toString());
+	}
+
+	const handleLanguage = event => {
+		setLanguage(event.value);
+		localStorage.setItem("Language", event.value);
+		setIsOpen(false);
+	}
 
 	return (
 		<nav className={style.container}>
@@ -46,15 +57,15 @@ const Nav = () => {
 				<Link className={style.link} to="contact" spy={true} smooth={true} delay={250} activeClass={style.active}> Contact </Link>
 			</div>
 			<div className={style.subcontainer}>
-				<ReactSwitch onChange={() => localStorage.setItem("DarkMode", (darkMode).toString())} checkedIcon={<FaMoon />} uncheckedIcon={<FaSun />} checked={darkMode} />
-				<button style={{ margin: "0 1.5rem" }} className={style.languages} onClick={() => setIsOpen(true)}> <BiWorld size="32" /> </button>
+				<ReactSwitch onChange={handleTheme} checkedIcon={<FaMoon />} uncheckedIcon={<FaSun />} checked={isDark} />
+				<button style={{ marginLeft: "2rem", marginRight: "1.5rem", cursor: "pointer" }} className={style.languages} onClick={() => setIsOpen(true)}> <BiWorld size="32" /> </button>
 				<Modal open={isOpen} onClose={() => setIsOpen(false)}>
 					<Select
-						value={options.filter(option => option.value.toLowerCase() === language)}
+						value={options.filter(option => option.value === language)}
 						options={options}
 						components={{ Option: Icon, Control: () => null }}
 						styles={selectStyle}
-						onChange={event => { localStorage.setItem("Language", event.value.toLowerCase()); setIsOpen(false) }}
+						onChange={handleLanguage}
 						isClearable={false}
 						isSearchable={false}
 						menuIsOpen={true}

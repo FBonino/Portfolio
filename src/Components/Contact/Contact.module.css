@@ -1,8 +1,15 @@
 .container {
-	margin: 25rem;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+
+.icons {
 	display: flex;
 	justify-content: center;
-	height: 30vh;
+	align-items: center;
 }
 
 .icon {
@@ -13,5 +20,40 @@
 	display: flex;
 	align-items: center;
 	border: 2px solid green;
-	margin: 0 1rem;
+	margin: 0 1.5rem;
+}
+
+.form {
+	border: 1px solid black;
+	width: fit-content;
+	padding: 2rem 4rem;
+	box-shadow: 0.3rem 0.3rem 0.75rem rgba(95, 95, 95, 0.712);
+	transition: 250ms ease;
+}
+
+.form:hover {
+	transform: scale(1.15);
+}
+
+.formDiv {
+	position: relative;
+	width: fit-content;
+	margin: 2rem auto;
+}
+
+.formDiv .floatingLabel {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	left: 0.4rem;
+	transition: 300ms ease;
+	color: rgb(121, 121, 121);
+}
+
+.formDiv input:focus ~ .floatingLabel, .formDiv input:not(:focus):valid ~ .floatingLabel, 
+.formDiv textarea:focus ~ .floatingLabel, .formDiv textarea:not(:focus):valid ~ .floatingLabel {
+	top: -1.25rem;
+	left: 0.05rem;
+	font-size: small;
+	color: black;
 }

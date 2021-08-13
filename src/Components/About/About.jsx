@@ -3,7 +3,6 @@ import style from "./About.module.css";
 import profile from "../assets/profile.jpg"
 
 const About = () => {
-
 	return (
 		<div className={style.container} id="about">
 			<h1> About Me </h1>

@@ -7,8 +7,8 @@ import Projects from './Components/Projects/Projects';
 function App() {
   const darkMode = localStorage.getItem("DarkMode");
   const language = localStorage.getItem("Language");
-  if (darkMode === undefined) localStorage.setItem("DarkMode", false);
-  if (!language) localStorage.setItem("Language", "english");
+  if (darkMode === null) localStorage.setItem("DarkMode", "false");
+  if (!language) localStorage.setItem("Language", "English");
 
   return (
     <>
