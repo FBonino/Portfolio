@@ -1,6 +1,6 @@
 .container {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	flex-direction: column;
 	align-items: center;
 	height: 100vh;
@@ -27,12 +27,14 @@
 	border: 1px solid black;
 	width: fit-content;
 	padding: 2rem 4rem;
-	box-shadow: 0.3rem 0.3rem 0.75rem rgba(95, 95, 95, 0.712);
-	transition: 250ms ease;
+	box-shadow: 0.3rem 0.3rem 0.5rem rgba(95, 95, 95, 0.712);
+	transition: 300ms ease;
+	margin-top: 5vh;
 }
 
 .form:hover {
-	transform: scale(1.15);
+	transform: scale(1.025);
+	box-shadow: 0.3rem 0.3rem 1rem rgba(95, 95, 95, 0.712);
 }
 
 .formDiv {
@@ -41,10 +43,16 @@
 	margin: 2rem auto;
 }
 
+.input {
+	width: 20rem;
+	height: 2rem;
+	padding: 0 0.4rem;
+}
+
 .formDiv .floatingLabel {
 	position: absolute;
 	pointer-events: none;
-	top: 0;
+	top: 0.4rem;
 	left: 0.4rem;
 	transition: 300ms ease;
 	color: rgb(121, 121, 121);

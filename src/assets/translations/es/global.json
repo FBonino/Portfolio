@@ -1,0 +1,39 @@
+{
+	"nav": {
+		"home": "Inicio",
+		"about": "Sobre Mi",
+		"projects": "Proyectos",
+		"contact": "Contacto"
+	},
+	"home": {
+		"dev": "Desarrollador Full Stack",
+		"more": "Más sobre mi"
+	},
+	"about": {
+		"title": "Sobre Mi",
+		"who": "¿Quien soy?",
+		"description": "Soy un Desarrollador Full Stack especializado en Javascript.",
+		"frontend": "Desarrollo Frontend",
+		"backend": "Desarrollo Backend",
+		"other": "Otras Tecnologías"
+	},
+	"projects": {
+		"title": "Proyectos"
+	},
+	"contact": {
+		"title": "Contactame",
+		"name": "Nombre",
+		"email": "Email",
+		"subject": "Asunto",
+		"message": "Mensaje",
+		"send": "Enviar",
+		"success": {
+			"title": "Email enviado",
+			"text": "El email fue enviado de forma satisfactoria. Gracias por ponerte en contacto conmigo, le responderé lo antes posible."
+		},
+		"error": {
+			"title": "Algo salió mal",
+			"text": "Ocurrió un error y el email no se pudo enviar."
+		}
+	}
+}

@@ -13,3 +13,14 @@
 	font-weight: 700;
 	cursor: pointer;
 }
+
+.arrow {
+	transform: rotateZ(-90deg);
+	transition: 100ms;
+	transition-delay: 1000ms;
+}
+
+.arrow:hover {
+	transform: rotateZ(0);
+	transition: 200ms;
+}

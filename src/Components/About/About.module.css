@@ -3,7 +3,7 @@
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-evenly;
 }
 
 .subcontainer {
@@ -15,4 +15,14 @@
 	border-radius: 9999px;
 	width: 13rem;
 	height: 13rem;
+}
+
+.about {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.info {
+	margin-left: 3rem;
 }

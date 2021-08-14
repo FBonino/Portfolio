@@ -1,11 +1,13 @@
 import { useState } from "react";
 import style from "./Projects.module.css";
 import ReactCardFlip from 'react-card-flip';
-import weather from "../assets/weather.png";
-import movies from "../assets/movies.png";
-import countries from "../assets/countries.png";
+import weather from "../../assets/weather.png";
+import movies from "../../assets/movies.png";
+import countries from "../../assets/countries.png";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+	const [t, i18n] = useTranslation("global");
 	const [birraFlipped, setBirraFlipped] = useState(false);
 	const [countriesFlipped, setContriesFlipped] = useState(false);
 	const [moviesFlipped, setMoviesFlipped] = useState(false);
@@ -14,7 +16,7 @@ const Projects = () => {
 
 	return (
 		<div className={style.container} id="projects">
-			<h1> Projects </h1>
+			<h1> {t("projects.title")} </h1>
 			<div className={style.subcontainer}>
 				<div className={style.projects}>
 					<ReactCardFlip containerStyle={containerStyle} isFlipped={birraFlipped} flipSpeedFrontToBack={0.8} flipSpeedBackToFront={0.4} infinite={true}>

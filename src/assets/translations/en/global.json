@@ -1,0 +1,39 @@
+{
+	"nav": {
+		"home": "Home",
+		"about": "About Me",
+		"projects": "Projects",
+		"contact": "Contact"
+	},
+	"home": {
+		"dev": "Full Stack Developer",
+		"more": "More about me"
+	},
+	"about": {
+		"title": "About Me",
+		"who": "Who am I?",
+		"description": "I am a Full Stack Developer specialized in Javascript.",
+		"frontend": "Frontend Development",
+		"backend": "Backend Development",
+		"other": "Other Technologies"
+	},
+	"projects": {
+		"title": "Projects"
+	},
+	"contact": {
+		"title": "Contact Me",
+		"name": "Name",
+		"email": "Email",
+		"subject": "Subject",
+		"message": "Message",
+		"send": "Send",
+		"success": {
+			"title": "Email sent",
+			"text": "The email was sent successfully. Thank you for contacting me, I will be in touch as soon as possible."
+		},
+		"error": {
+			"title": "Something went wrong",
+			"text": "An error ocurred and the email could not be sent."
+		}
+	}
+}

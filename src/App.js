@@ -8,7 +8,7 @@ function App() {
   const darkMode = localStorage.getItem("DarkMode");
   const language = localStorage.getItem("Language");
   if (darkMode === null) localStorage.setItem("DarkMode", "false");
-  if (!language) localStorage.setItem("Language", "English");
+  if (!language) localStorage.setItem("Language", "en");
 
   return (
     <>
