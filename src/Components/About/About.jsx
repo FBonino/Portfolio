@@ -2,11 +2,17 @@ import React from "react";
 import style from "./About.module.css";
 import profile from "../../assets/profile.jpg"
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 
-const About = () => {
-	const [t, i18n] = useTranslation("global");
+const Container = styled.div`
+	background-color: ${props => props.theme.background};
+	color: ${props => props.theme.color};
+`;
+
+const About = ({ theme }) => {
+	const [t] = useTranslation("global");
 	return (
-		<div className={style.container} id="about">
+		<Container className={style.container} id="about">
 			<h1> {t("about.title")} </h1>
 			<div className={style.about}>
 				<img className={style.profilePic} src={profile} alt="Profile pic" />
@@ -45,7 +51,7 @@ const About = () => {
 					<p> Git </p>
 				</div>
 			</div>
-		</div>
+		</Container>
 	)
 }
 

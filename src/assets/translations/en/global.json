@@ -18,7 +18,9 @@
 		"other": "Other Technologies"
 	},
 	"projects": {
-		"title": "Projects"
+		"title": "Projects",
+		"visit": "Visit Project",
+		"more": "More Information"
 	},
 	"contact": {
 		"title": "Contact Me",

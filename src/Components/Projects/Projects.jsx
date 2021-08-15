@@ -5,17 +5,32 @@ import weather from "../../assets/weather.png";
 import movies from "../../assets/movies.png";
 import countries from "../../assets/countries.png";
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 
-const Projects = () => {
-	const [t, i18n] = useTranslation("global");
+const Container = styled.div`
+	background-color: ${props => props.theme.background};
+	color: ${props => props.theme.color};
+`;
+
+const Projects = ({ theme }) => {
+	const [t] = useTranslation("global");
 	const [birraFlipped, setBirraFlipped] = useState(false);
 	const [countriesFlipped, setContriesFlipped] = useState(false);
 	const [moviesFlipped, setMoviesFlipped] = useState(false);
 	const [weatherFlipped, setWeatherFlipped] = useState(false);
-	const containerStyle = { height: "22vh", width: "20vw", boxShadow: "0 0 0.4em black", minWidth: "17em", margin: "1vh 2vw", minHeight: "10em" };
+	const containerStyle = {
+		height: "22vh",
+		width: "20vw",
+		boxShadow: "0 0 0.4em black",
+		minWidth: "17em",
+		margin: "1vh 2vw",
+		minHeight: "10em",
+		backgroundColor: theme === "dark" ? "white" : "black",
+		color: theme === "light" ? "white" : "black"
+	};
 
 	return (
-		<div className={style.container} id="projects">
+		<Container className={style.container} id="projects">
 			<h1> {t("projects.title")} </h1>
 			<div className={style.subcontainer}>
 				<div className={style.projects}>
@@ -27,10 +42,10 @@ const Projects = () => {
 							<h1> AltaBirra </h1>
 							<div className={style.linksDiv}>
 								<a href="https://alta-birra.vercel.app" className={style.links}>
-									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> Deploy
+									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> {t("projects.visit")}
 								</a>
 								<a href="https://github.com/FBonino/Funtivity" className={style.links}>
-									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> Repo
+									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> {t("projects.more")}
 								</a>
 							</div>
 						</div>
@@ -43,10 +58,10 @@ const Projects = () => {
 							<h1> Funtivity </h1>
 							<div className={style.linksDiv}>
 								<a href="http://funtivity.vercel.app" className={style.links}>
-									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> Deploy
+									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> {t("projects.visit")}
 								</a>
 								<a href="https://github.com/FBonino/Funtivity" className={style.links}>
-									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> Repo
+									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> {t("projects.more")}
 								</a>
 							</div>
 						</div>
@@ -63,10 +78,10 @@ const Projects = () => {
 							<h1> MoviesApp </h1>
 							<div className={style.linksDiv}>
 								<a href="https://movies-app-fbonino.vercel.app" className={style.links}>
-									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> Deploy
+									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> {t("projects.visit")}
 								</a>
 								<a href="https://github.com/FBonino/MoviesApp" className={style.links}>
-									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> Repo
+									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> {t("projects.more")}
 								</a>
 							</div>
 						</div>
@@ -79,17 +94,17 @@ const Projects = () => {
 							<h1> WeatherApp </h1>
 							<div className={style.linksDiv}>
 								<a href="https://weather-app-fbonino.vercel.app" className={style.links}>
-									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> Deploy
+									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> {t("projects.visit")}
 								</a>
 								<a href="https://github.com/FBonino/WeatherApp" className={style.links}>
-									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> Repo
+									<img src="https://image.flaticon.com/icons/png/32/733/733609.png" alt="" height="32px" width="32px" /> {t("projects.more")}
 								</a>
 							</div>
 						</div>
 					</ReactCardFlip>
 				</div>
 			</div>
-		</div>
+		</Container>
 	)
 }
 

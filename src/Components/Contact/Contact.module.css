@@ -27,7 +27,7 @@
 	border: 1px solid black;
 	width: fit-content;
 	padding: 2rem 4rem;
-	box-shadow: 0.3rem 0.3rem 0.5rem rgba(95, 95, 95, 0.712);
+	box-shadow: 0.2rem 0.2rem 0.7rem rgba(95, 95, 95, 0.712);
 	transition: 300ms ease;
 	margin-top: 5vh;
 }

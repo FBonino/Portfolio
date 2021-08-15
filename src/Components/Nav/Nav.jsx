@@ -9,7 +9,13 @@ import en from "../../assets/en.jpg";
 import es from "../../assets/es.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 
+const Container = styled.nav`
+	background-color: ${props => props.theme.background};
+	color: ${props => props.theme.color};
+	box-shadow: 0 0 0.75em ${props => props.theme.color};
+`;
 
 const { Option } = components;
 
@@ -32,16 +38,15 @@ const selectStyle = {
 	})
 }
 
-const Nav = () => {
+const Nav = ({ theme, setTheme }) => {
 	const [t, i18n] = useTranslation("global");
 	const [isOpen, setIsOpen] = useState(false);
-	const [isDark, setIsDark] = useState(!!localStorage.getItem("DarkMode"));
 	const [language, setLanguage] = useState(localStorage.getItem("Language"));
 	const options = [{ value: "en", icon: en }, { value: "es", icon: es }];
 
 	const handleTheme = () => {
-		setIsDark(!isDark);
-		localStorage.setItem("DarkMode", isDark.toString());
+		localStorage.setItem("DarkMode", (theme !== "dark").toString());
+		setTheme(theme === "light" ? "dark" : "light");
 	}
 
 	const handleLanguage = event => {
@@ -52,7 +57,7 @@ const Nav = () => {
 	}
 
 	return (
-		<nav className={style.container}>
+		<Container className={style.container}>
 			<div className={style.subcontainer}>
 				<Link className={style.link} to="home" spy={true} smooth={true} delay={250} activeClass={style.active}> {t("nav.home")} </Link>
 				<Link className={style.link} to="about" spy={true} smooth={true} delay={250} activeClass={style.active}> {t("nav.about")} </Link>
@@ -60,8 +65,8 @@ const Nav = () => {
 				<Link className={style.link} to="contact" spy={true} smooth={true} delay={250} activeClass={style.active}> {t("nav.contact")} </Link>
 			</div>
 			<div className={style.subcontainer}>
-				<ReactSwitch onChange={handleTheme} checkedIcon={<FaMoon className={style.switchIcon} />} uncheckedIcon={<FaSun className={style.switchIcon} />} checked={isDark} />
-				<button style={{ marginLeft: "2rem", marginRight: "1.5rem", cursor: "pointer" }} className={style.languages} onClick={() => setIsOpen(true)}> <BiWorld size="32" /> </button>
+				<ReactSwitch onChange={handleTheme} checkedIcon={<FaSun className={style.switchIcon} />} uncheckedIcon={<FaMoon className={style.switchIcon} />} checked={theme === "dark"} />
+				<button className={style.languages} onClick={() => setIsOpen(true)}> <BiWorld size="32" color={theme === "dark" ? "white" : "black"} /> </button>
 				<Modal open={isOpen} onClose={() => setIsOpen(false)}>
 					<Select
 						value={options.filter(option => option.value === language)}
@@ -75,7 +80,7 @@ const Nav = () => {
 					/>
 				</Modal>
 			</div>
-		</nav>
+		</Container>
 	)
 }
 

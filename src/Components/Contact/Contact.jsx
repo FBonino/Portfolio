@@ -6,9 +6,15 @@ import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 
-const Contact = () => {
-	const [t, i18n] = useTranslation("global");
+const Container = styled.div`
+	background-color: ${props => props.theme.background};
+	color: ${props => props.theme.color};
+`;
+
+const Contact = ({ theme }) => {
+	const [t] = useTranslation("global");
 	const { register, watch, reset } = useForm({ mode: "onBlur" });
 	const nameValue = watch("name");
 	const emailValue = watch("email");
@@ -32,7 +38,7 @@ const Contact = () => {
 	}
 
 	return (
-		<div className={style.container} id="contact">
+		<Container className={style.container} id="contact">
 			<div className={style.form}>
 				<h3> {t("contact.title")} </h3>
 				<form onSubmit={handleSubmit} autoComplete="off">
@@ -62,7 +68,7 @@ const Contact = () => {
 					<a className={style.icon} href="mailto:boninoffranco@gmail.com"> < SiGmail /> </a>
 				</IconContext.Provider>
 			</div>
-		</div>
+		</Container>
 	)
 }
 
