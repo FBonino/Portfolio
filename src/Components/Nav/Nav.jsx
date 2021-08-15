@@ -45,7 +45,7 @@ const Nav = ({ theme, setTheme }) => {
 	const options = [{ value: "en", icon: en }, { value: "es", icon: es }];
 
 	const handleTheme = () => {
-		localStorage.setItem("DarkMode", (theme !== "dark").toString());
+		localStorage.setItem("Theme", theme === "light" ? "dark" : "light");
 		setTheme(theme === "light" ? "dark" : "light");
 	}
 

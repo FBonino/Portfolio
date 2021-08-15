@@ -22,11 +22,7 @@ const themes = {
 }
 
 function App() {
-  const [theme, setTheme] = useState("light");
-  const darkMode = localStorage.getItem("DarkMode");
-  const language = localStorage.getItem("Language");
-  if (darkMode === null) localStorage.setItem("DarkMode", "false");
-  if (!language) localStorage.setItem("Language", "en");
+  const [theme, setTheme] = useState(localStorage.getItem("Theme") || "light");
 
   return (
     <ThemeProvider theme={themes[theme]}>
