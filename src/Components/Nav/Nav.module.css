@@ -26,22 +26,22 @@
 }
 
 .link:hover {
-	transform: scale(1.05);
+	filter: opacity(0.65);
 }
 
 .active {
-	transform: scale(1.05);
-	text-decoration: underline 2px solid black;
+	filter: brightness(1.5);
+	transform: scale(1.075);
 }
 
 .languages {
 	padding: 0;
-	border-radius: 9999;
+	border-radius: 9999px;
 	border: none;
-	background-color: transparent;
 	margin-left: 2rem; 
 	margin-right: 1.5rem;
 	cursor: pointer;
+	background-color: transparent;
 }
 
 .switchIcon {

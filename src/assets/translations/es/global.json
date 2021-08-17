@@ -6,15 +6,20 @@
 		"contact": "Contacto"
 	},
 	"home": {
-		"dev": "Desarrollador Full Stack",
+		"hi": "Hola, me llamo",
+		"dev": "y soy Desarrollador Full Stack.",
+		"desc": "Soy un desarrollador web al que le encantan los desafíos, la creación de páginas funcionales y útiles, y aprender cosas nuevas.",
+		"contact": "Ponete en contacto",
 		"more": "Más sobre mi"
 	},
 	"about": {
 		"title": "Sobre Mi",
 		"who": "¿Quien soy?",
 		"description": "Soy un Desarrollador Full Stack especializado en Javascript.",
+		"skills": "Habilidades",
 		"frontend": "Desarrollo Frontend",
 		"backend": "Desarrollo Backend",
+		"languages": "Lenguajes de Programacion",
 		"other": "Otras Tecnologías"
 	},
 	"projects": {

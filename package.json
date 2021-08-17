@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@brainhubeu/react-carousel": "^2.0.4",
     "emailjs-com": "^3.2.0",
     "i18next": "^20.4.0",
     "i18next-browser-languagedetector": "^6.1.2",
@@ -12,7 +13,6 @@
     "react-hook-form": "^7.12.2",
     "react-i18next": "^11.11.4",
     "react-icons": "^4.2.0",
-    "react-responsive-carousel": "^3.2.20",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.3",

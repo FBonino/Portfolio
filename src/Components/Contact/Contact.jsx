@@ -13,6 +13,51 @@ const Container = styled.div`
 	color: ${props => props.theme.color};
 `;
 
+const Form = styled.div`
+	border: 1px solid ${props => props.theme.color};
+	box-shadow: 0 0 0.25rem ${props => props.theme.secondary};
+	&:hover {
+		box-shadow: 0 0 0.4rem ${props => props.theme.secondary};
+	};
+`;
+
+const Icon = styled.a`
+	background-color: ${props => props.theme.color};
+	border: 2px solid ${props => props.theme.secondary};
+	&:hover {
+		filter: brightness(1.25);
+	}
+`;
+
+const Input = styled.input`
+	background-color: ${props => props.theme.color};
+	color: ${props => props.theme.background};
+`;
+
+const Area = styled.textarea`
+	background-color: ${props => props.theme.color};
+	color: ${props => props.theme.background};
+	resize: vertical;
+	padding: 0.4rem;
+`;
+
+const Label = styled.label`
+	color: ${props => props.theme.background};
+`;
+
+const Send = styled.button`
+	padding: 0.5rem;
+	border: none;
+	background-color: ${props => props.theme.color};
+	border-radius: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	color: ${props => props.theme.background};
+	&:hover {
+		filter: brightness(1.1);
+	}
+`;
+
 const Contact = ({ theme }) => {
 	const [t] = useTranslation("global");
 	const { register, watch, reset } = useForm({ mode: "onBlur" });
@@ -39,33 +84,33 @@ const Contact = ({ theme }) => {
 
 	return (
 		<Container className={style.container} id="contact">
-			<div className={style.form}>
+			<Form className={style.form}>
 				<h3> {t("contact.title")} </h3>
 				<form onSubmit={handleSubmit} autoComplete="off">
 					<div className={style.formDiv}>
-						<input className={style.input} {...register("name")} required />
-						<label className={style.floatingLabel}> {t("contact.name")} </label>
+						<Input className={style.input} {...register("name")} required />
+						<Label className={style.floatingLabel}> {t("contact.name")} </Label>
 					</div>
 					<div className={style.formDiv}>
-						<input className={style.input} {...register("email")} required />
-						<label className={style.floatingLabel}> {t("contact.email")} </label>
+						<Input className={style.input} {...register("email")} required />
+						<Label className={style.floatingLabel}> {t("contact.email")} </Label>
 					</div>
 					<div className={style.formDiv}>
-						<input className={style.input} {...register("subject")} required />
-						<label className={style.floatingLabel}> {t("contact.subject")} </label>
+						<Input className={style.input} {...register("subject")} required />
+						<Label className={style.floatingLabel}> {t("contact.subject")} </Label>
 					</div>
 					<div className={style.formDiv}>
-						<textarea cols="44" rows="10" style={{ resize: "vertical", padding: "0.4rem" }} {...register("text")} required />
-						<label className={style.floatingLabel}> {t("contact.message")} </label>
+						<Area cols="44" rows="10" style={{ resize: "vertical", padding: "0.4rem" }} {...register("text")} required />
+						<Label className={style.floatingLabel}> {t("contact.message")} </Label>
 					</div>
-					<input type="submit" value={t("contact.send")} />
+					<Send> {t("contact.send")} </Send>
 				</form>
-			</div>
+			</Form>
 			<div className={style.icons}>
-				<IconContext.Provider value={{ size: 28, color: "green" }}>
-					<a className={style.icon} href="https://www.linkedin.com/in/fbonino/"> < FaLinkedin /> </a>
-					<a className={style.icon} href="https://github.com/FBonino/"> < FaGithub /> </a>
-					<a className={style.icon} href="mailto:boninoffranco@gmail.com"> < SiGmail /> </a>
+				<IconContext.Provider value={{ size: 28, color: theme.secondary }}>
+					<Icon className={style.icon} href="https://www.linkedin.com/in/fbonino/"> < FaLinkedin /> </Icon>
+					<Icon className={style.icon} href="https://github.com/FBonino/"> < FaGithub /> </Icon>
+					<Icon className={style.icon} href="mailto:boninoffranco@gmail.com"> < SiGmail /> </Icon>
 				</IconContext.Provider>
 			</div>
 		</Container>

@@ -7,13 +7,17 @@ import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 
 const lightTheme = {
-  background: "white",
-  color: "black"
+  background: "#E1E5EA",
+  color: "#222831",
+  primary: "#A7BBC7",
+  secondary: "#DA7F8F"
 }
 
 const darkTheme = {
-  background: "black",
-  color: "white"
+  background: "#222831",
+  color: "#DDDDDD",
+  primary: "#30475E",
+  secondary: "#F05454"
 }
 
 const themes = {
@@ -26,11 +30,11 @@ function App() {
 
   return (
     <ThemeProvider theme={themes[theme]}>
-      <Home theme={theme} />
-      <Nav theme={theme} setTheme={setTheme} />
-      <About theme={theme} />
-      <Projects theme={theme} />
-      <Contact theme={theme} />
+      <Home theme={themes[theme]} />
+      <Nav theme={theme} setTheme={setTheme} themes={themes[theme]} />
+      <About theme={themes[theme]} />
+      <Projects theme={themes[theme]} />
+      <Contact theme={themes[theme]} />
     </ThemeProvider>
   );
 }

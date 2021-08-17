@@ -3,7 +3,7 @@
 	justify-content: space-around;
 	flex-direction: column;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 .icons {
@@ -19,22 +19,14 @@
 	padding: 0.25rem;
 	display: flex;
 	align-items: center;
-	border: 2px solid green;
 	margin: 0 1.5rem;
 }
 
 .form {
-	border: 1px solid black;
 	width: fit-content;
 	padding: 2rem 4rem;
-	box-shadow: 0.2rem 0.2rem 0.7rem rgba(95, 95, 95, 0.712);
 	transition: 300ms ease;
 	margin-top: 5vh;
-}
-
-.form:hover {
-	transform: scale(1.025);
-	box-shadow: 0.3rem 0.3rem 1rem rgba(95, 95, 95, 0.712);
 }
 
 .formDiv {
@@ -54,8 +46,7 @@
 	pointer-events: none;
 	top: 0.4rem;
 	left: 0.4rem;
-	transition: 300ms ease;
-	color: rgb(121, 121, 121);
+	transition: 200ms ease;
 }
 
 .formDiv input:focus ~ .floatingLabel, .formDiv input:not(:focus):valid ~ .floatingLabel, 
@@ -63,5 +54,5 @@
 	top: -1.25rem;
 	left: 0.05rem;
 	font-size: small;
-	color: black;
+	filter: invert();
 }

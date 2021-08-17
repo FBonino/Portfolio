@@ -21,12 +21,12 @@ const Projects = ({ theme }) => {
 	const containerStyle = {
 		height: "22vh",
 		width: "20vw",
-		boxShadow: "0 0 0.4em black",
 		minWidth: "17em",
-		margin: "1vh 2vw",
 		minHeight: "10em",
-		backgroundColor: theme === "dark" ? "white" : "black",
-		color: theme === "light" ? "white" : "black"
+		boxShadow: `0 0 0.4em ${theme.color}`,
+		margin: "1vh 2vw",
+		backgroundColor: theme.background,
+		color: theme.color
 	};
 
 	return (

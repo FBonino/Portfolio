@@ -1,8 +1,9 @@
-import React from "react";
 import style from "./About.module.css";
 import profile from "../../assets/profile.jpg"
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import Carousel, { autoplayPlugin, slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 const Container = styled.div`
 	background-color: ${props => props.theme.background};
@@ -13,44 +14,44 @@ const About = ({ theme }) => {
 	const [t] = useTranslation("global");
 	return (
 		<Container className={style.container} id="about">
-			<h1> {t("about.title")} </h1>
+			<h1 style={{ marginTop: "5rem" }}> {t("about.title")} </h1>
 			<div className={style.about}>
 				<img className={style.profilePic} src={profile} alt="Profile pic" />
 				<div className={style.info}>
 					<h3> {t("about.who")} </h3>
-					<p>
-						{t("about.description")}
-					</p>
+					<p>	{t("about.description1")} </p>
+					<p>	{t("about.description2")}	</p>
+					<p>	{t("about.description3")}	</p>
+					<div className={style.skills}>
+						<p> ▶ Javascript </p>
+						<p> ▶ React </p>
+						<p> ▶ Node.js </p>
+						<p> ▶ Express.js </p>
+						<p> ▶ PostgreSQL </p>
+						<p> ▶ Typescript </p>
+					</div>
 				</div>
 			</div>
-			<div className={style.subcontainer}>
-				<div className={style.skills}>
-					<h4> {t("about.frontend")} </h4>
-					<p> Javascript </p>
-					<p> Typescript </p>
-					<p> React </p>
-					<p> Redux </p>
-					<p> HTML </p>
-					<p> CSS </p>
-				</div>
-				<div className={style.skills}>
-					<h4> {t("about.backend")} </h4>
-					<p> Javascript </p>
-					<p> Typescript </p>
-					<p> Node.js </p>
-					<p> Express.js </p>
-					<p> Sequelize </p>
-					<p> Prisma </p>
-				</div>
-				<div className={style.skills}>
-					<h4> {t("about.other")} </h4>
-					<p> Python </p>
-					<p> C++ </p>
-					<p> SQL </p>
-					<p> PostgreSQL </p>
-					<p> Git </p>
-				</div>
-			</div>
+			<h3> {t("about.skills")} </h3>
+			<Carousel
+				className={style.logos}
+				plugins={["infinite", { resolve: autoplayPlugin, options: { interval: 1000 } }, { resolve: slidesToShowPlugin, options: { numberOfSlides: 2 } }]}
+			>
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" />
+				<img src="https://www.nextontop.com/assets/img/services/web/expressjs.svg" background-color="#ffffff" alt="express" style={{ transform: "scale(1.57)" }} />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" />
+				<img src="https://images.tute.io/tute/topic/prisma.png" alt="prisma" style={{ transform: "scale(1.57)", filter: "brightness(3)" }} />
+				<img src="https://static-00.iconduck.com/assets.00/file-type-sequelize-icon-443x512-ck0z81j3.png" alt="sequelize" />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" />
+				<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" />
+			</Carousel>
 		</Container>
 	)
 }

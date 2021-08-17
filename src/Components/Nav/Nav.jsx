@@ -14,7 +14,9 @@ import styled from "styled-components";
 const Container = styled.nav`
 	background-color: ${props => props.theme.background};
 	color: ${props => props.theme.color};
-	box-shadow: 0 0 0.75em ${props => props.theme.color};
+	box-shadow: 0 0 0.75rem ${props => props.theme.secondary};
+	filter: brightness(1.5);
+	opacity: 0.9;
 `;
 
 const { Option } = components;
@@ -38,15 +40,16 @@ const selectStyle = {
 	})
 }
 
-const Nav = ({ theme, setTheme }) => {
+const Nav = ({ theme, setTheme, themes }) => {
 	const [t, i18n] = useTranslation("global");
 	const [isOpen, setIsOpen] = useState(false);
 	const [language, setLanguage] = useState(localStorage.getItem("Language"));
 	const options = [{ value: "en", icon: en }, { value: "es", icon: es }];
 
 	const handleTheme = () => {
-		localStorage.setItem("Theme", theme === "light" ? "dark" : "light");
-		setTheme(theme === "light" ? "dark" : "light");
+		let temp = theme === "light" ? "dark" : "light";
+		localStorage.setItem("Theme", temp);
+		setTheme(temp);
 	}
 
 	const handleLanguage = event => {
@@ -59,14 +62,33 @@ const Nav = ({ theme, setTheme }) => {
 	return (
 		<Container className={style.container}>
 			<div className={style.subcontainer}>
-				<Link className={style.link} to="home" spy={true} smooth={true} delay={250} activeClass={style.active}> {t("nav.home")} </Link>
-				<Link className={style.link} to="about" spy={true} smooth={true} delay={250} activeClass={style.active}> {t("nav.about")} </Link>
-				<Link className={style.link} to="projects" spy={true} smooth={true} delay={250} activeClass={style.active}> {t("nav.projects")} </Link>
-				<Link className={style.link} to="contact" spy={true} smooth={true} delay={250} activeClass={style.active}> {t("nav.contact")} </Link>
+				<Link className={style.link} to="home" spy={true} smooth={true} delay={500} activeClass={style.active}>
+					{t("nav.home")}
+				</Link>
+				<Link className={style.link} to="about" spy={true} smooth={true} delay={500} activeClass={style.active}>
+					{t("nav.about")}
+				</Link>
+				<Link className={style.link} to="projects" spy={true} smooth={true} delay={500} activeClass={style.active}>
+					{t("nav.projects")}
+				</Link>
+				<Link className={style.link} to="contact" spy={true} smooth={true} delay={500} activeClass={style.active}>
+					{t("nav.contact")}
+				</Link>
 			</div>
 			<div className={style.subcontainer}>
-				<ReactSwitch onChange={handleTheme} checkedIcon={<FaSun className={style.switchIcon} />} uncheckedIcon={<FaMoon className={style.switchIcon} />} checked={theme === "dark"} />
-				<button className={style.languages} onClick={() => setIsOpen(true)}> <BiWorld size="32" color={theme === "dark" ? "white" : "black"} /> </button>
+				<ReactSwitch
+					onChange={handleTheme}
+					checkedIcon={<FaSun className={style.switchIcon} />}
+					uncheckedIcon={<FaMoon className={style.switchIcon} />}
+					checked={theme === "dark"}
+					offHandleColor="#222831"
+					offColor="#30475E"
+					onHandleColor="#FAF3F3"
+					onColor="#F05454"
+				/>
+				<button className={style.languages} onClick={() => setIsOpen(true)}>
+					<BiWorld size="32" color={themes.color} />
+				</button>
 				<Modal open={isOpen} onClose={() => setIsOpen(false)}>
 					<Select
 						value={options.filter(option => option.value === language)}

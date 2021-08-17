@@ -1,6 +1,6 @@
 .container {
 	margin-top: 100vh;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -9,20 +9,51 @@
 .subcontainer {
 	display: flex;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 
 .profilePic {
 	border-radius: 9999px;
-	width: 13rem;
-	height: 13rem;
+	width: 15rem;
+	height: 15rem;
+	box-shadow: 0 0 1rem grey;
 }
 
 .about {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-wrap: wrap;
+	width: 50%;
+	margin: auto;
+	justify-content: space-evenly;
 }
 
 .info {
-	margin-left: 3rem;
+	text-align: justify;
+	width: 50%;
+}
+
+.logos {
+	width: 40%;
+	margin: 0 auto;
+	margin-bottom: 4rem;
+	border-radius: 1rem;
+	border: 5px solid grey;
+	padding: 0.5rem 0;
+	background-color: lightgray;
+}
+
+.logos img {
+	width: 4vw;
+	height: 4vw;
+}
+
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	width: 80%;
+	margin: auto;
+}
+
+.skills > p {
+	margin: 1rem;
 }

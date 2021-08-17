@@ -6,15 +6,22 @@
 		"contact": "Contact"
 	},
 	"home": {
-		"dev": "Full Stack Developer",
+		"hi": "Hi, my name is",
+		"dev": "and I'm a Full Stack Developer.",
+		"desc": "I am a web developer that loves taking on logical challenges, building functional and useful pages, and learning new things.",
+		"contact": "Get in touch",
 		"more": "More about me"
 	},
 	"about": {
 		"title": "About Me",
 		"who": "Who am I?",
-		"description": "I am a Full Stack Developer specialized in Javascript.",
+		"description1": "I am a Full Stack Developer specialized in Javascript. My passion for programming started in highschool, where I learned the basics with Python. Because of that I signed up for Information Systems Engineering, but after some courses I realized what I liked the most was programming so I finished a bootcamp to start working in what I love.",
+		"description2": "I am interested in any kind of challenge where I can use both my knowledge and my logical thinking aswell as I keep developing my skills and learn new technologies. ",
+		"description3": "Some of the technologies I know are: ",
+		"skills": "Skills",
 		"frontend": "Frontend Development",
 		"backend": "Backend Development",
+		"languages": "Programming Languages",
 		"other": "Other Technologies"
 	},
 	"projects": {
