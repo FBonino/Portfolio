@@ -19,7 +19,7 @@ const About = ({ theme }) => {
 			<div className={style.about}>
 				<img className={style.profilePic} src={profile} alt="Profile pic" />
 				<div className={style.info}>
-					<h3> {t("about.who")} </h3>
+					<h2> {t("about.who")} </h2>
 					<p>	{t("about.description1")} </p>
 					<p>	{t("about.description2")}	</p>
 					<p>	{t("about.description3")}	</p>
@@ -48,7 +48,7 @@ const About = ({ theme }) => {
 				<img src="https://www.nextontop.com/assets/img/services/web/expressjs.svg" background-color="#ffffff" alt="express" style={{ transform: "scale(1.57)" }} />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" />
 				<img src="https://images.tute.io/tute/topic/prisma.png" alt="prisma" style={{ transform: "scale(1.57)", filter: "brightness(3)" }} />
-				<img src="https://static-00.iconduck.com/assets.00/file-type-sequelize-icon-443x512-ck0z81j3.png" alt="sequelize" />
+				<img src="https://static-00.iconduck.com/assets.00/file-type-sequelize-icon-443x512-ck0z81j3.png" alt="sequelize" style={{ width: "3.33vw" }} />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" />
 				<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" />

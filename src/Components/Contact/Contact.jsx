@@ -91,29 +91,29 @@ const Contact = ({ theme }) => {
 			<Form className={style.form}>
 				<form onSubmit={handleSubmit} autoComplete="off">
 					<div className={style.formDiv}>
-						<Input className={style.input} {...register("name")} required />
-						<Label className={style.floatingLabel}> {t("contact.name")} </Label>
+						<Input id="name" className={style.input} {...register("name")} required />
+						<Label className={style.floatingLabel} for="name"> {t("contact.name")} </Label>
 					</div>
 					<div className={style.formDiv}>
-						<Input className={style.input} {...register("email")} required />
-						<Label className={style.floatingLabel}> {t("contact.email")} </Label>
+						<Input id="email" className={style.input} {...register("email")} required />
+						<Label className={style.floatingLabel} for="email"> {t("contact.email")} </Label>
 					</div>
 					<div className={style.formDiv}>
-						<Input className={style.input} {...register("subject")} required />
-						<Label className={style.floatingLabel}> {t("contact.subject")} </Label>
+						<Input id="subject" className={style.input} {...register("subject")} required />
+						<Label className={style.floatingLabel} for="subject"> {t("contact.subject")} </Label>
 					</div>
 					<div className={style.formDiv}>
-						<Area cols="44" rows="10" style={{ resize: "vertical", padding: "0.4rem" }} {...register("text")} required />
-						<Label className={style.floatingLabel}> {t("contact.message")} </Label>
+						<Area id="message" cols="44" rows="10" style={{ resize: "vertical", padding: "0.4rem" }} {...register("text")} required />
+						<Label className={style.floatingLabel} for="message"> {t("contact.message")} </Label>
 					</div>
 					<Send> {t("contact.send")} </Send>
 				</form>
 			</Form>
 			<div className={style.icons}>
 				<IconContext.Provider value={{ size: 28, color: theme.secondary }}>
-					<Icon className={style.icon} href="https://www.linkedin.com/in/fbonino/"> < FaLinkedin /> </Icon>
-					<Icon className={style.icon} href="https://github.com/FBonino/"> < FaGithub /> </Icon>
-					<Icon className={style.icon} href="mailto:boninoffranco@gmail.com"> < SiGmail /> </Icon>
+					<Icon className={style.icon} href="https://www.linkedin.com/in/fbonino/" aria-label="Linkedin"> < FaLinkedin /> </Icon>
+					<Icon className={style.icon} href="https://github.com/FBonino/" aria-label="Github"> < FaGithub /> </Icon>
+					<Icon className={style.icon} href="mailto:boninoffranco@gmail.com" aria-label="Gmail"> < SiGmail /> </Icon>
 				</IconContext.Provider>
 			</div>
 		</Container>

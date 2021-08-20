@@ -15,6 +15,8 @@
 	color: black;
 	font-weight: 700;
 	cursor: pointer;
+	position: absolute;
+	bottom: 2rem;
 }
 
 .title {
@@ -33,9 +35,12 @@
 }
 
 .more {
-	position: absolute;
-	bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	animation: jump .75s linear alternate infinite;
+	position: relative;
 }
 
 .button {

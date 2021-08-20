@@ -95,7 +95,7 @@ const Nav = ({ theme, setTheme, themes }) => {
 						onHandleColor="#FAF3F3"
 						onColor="#F05454"
 					/>
-					<button className={style.languages} onClick={() => setIsOpen(true)}>
+					<button className={style.languages} onClick={() => setIsOpen(true)} aria-label="Language">
 						<MdLanguage size="32" color={themes.color} />
 					</button>
 					<Modal open={isOpen} onClose={() => setIsOpen(false)}>
@@ -113,7 +113,7 @@ const Nav = ({ theme, setTheme, themes }) => {
 				</div>
 			</div>
 			<div className={style.responsive}>
-				<button className={style.burger} onClick={() => setIsNavOpen(true)}>
+				<button className={style.burger} onClick={() => setIsNavOpen(true)} aria-label="Menu">
 					<GiHamburgerMenu size="32" color={themes.color} />
 				</button>
 				<NavModal open={isNavOpen} onClose={() => setIsNavOpen(false)}>
@@ -128,7 +128,7 @@ const Nav = ({ theme, setTheme, themes }) => {
 							onHandleColor="#FAF3F3"
 							onColor="#F05454"
 						/>
-						<button className={style.languages} onClick={() => setIsOpen(true)}>
+						<button className={style.languages} onClick={() => setIsOpen(true)} aria-label="Language">
 							<MdLanguage size="32" color={themes.color} />
 						</button>
 						<Modal open={isOpen} onClose={() => setIsOpen(false)}>

@@ -24,11 +24,12 @@ const Home = ({ theme }) => {
 				<p style={{ marginBottom: "2rem" }}> {t("home.desc")} </p>
 				<a href="mailto:boninoffranco@gmail.com" className={style.button}> {t("home.contact")} </a>
 			</div>
-			<div className={style.more}>
-				<Link className={style.link} to="about" spy={true} smooth={true}> {t("home.more")} </Link>
-				<br />
-				<Link className={style.link} to="about" spy={true} smooth={true}> <TiArrowSortedDown className={style.arrow} size="42" color={theme === "dark" ? "white" : "black"} /> </Link>
-			</div>
+			<Link className={style.link} to="about" spy={true} smooth={true}>
+				<div className={style.more}>
+					{t("home.more")}
+					<TiArrowSortedDown className={style.arrow} size="42" color={theme.color} />
+				</div>
+			</Link>
 		</Container>
 	)
 }
