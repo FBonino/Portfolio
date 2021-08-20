@@ -1,4 +1,10 @@
 import style from "./ModalResponsive.module.css";
+import styled from "styled-components";
+
+const Container = styled.div`
+	background-color: ${props => props.theme.backgroundColor};
+	color: ${props => props.theme.color};
+`;
 
 const Modal = ({ open, onClose, children }) => {
 	return !open
@@ -6,9 +12,9 @@ const Modal = ({ open, onClose, children }) => {
 		: (
 			<>
 				<div className={style.background} onClick={onClose} />
-				<div className={style.container}>
+				<Container className={style.container}>
 					{children}
-				</div>
+				</Container>
 			</>
 		)
 }

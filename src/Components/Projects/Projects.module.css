@@ -6,6 +6,11 @@
 	min-height: 100vh;
 }
 
+.title {
+	margin-top: 7.5rem; 
+	margin-bottom: 1rem;
+}
+
 .projects {
 	display: flex;
 	flex-wrap: wrap;
@@ -40,6 +45,15 @@
 	justify-content: space-between;
 }
 
+.cardImage {
+	position: absolute;
+	height: 22vh;
+	width: 20vw;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
 .cardDiv:hover {
 	filter: brightness(1.1);
 }
@@ -70,4 +84,20 @@
 .technologies > p {
 	margin: 1rem 0.5rem;
 	font-size: small;
+}
+
+@media only screen and (max-width: 1366px) {
+	
+}
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+@media only screen and (max-width: 768px) {
+	
+	.title {
+		margin: 0;
+		margin-top: 1.5rem;
+	}
 }

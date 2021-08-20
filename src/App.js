@@ -1,11 +1,11 @@
+import { ThemeProvider } from 'styled-components';
+import { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Contact from './Components/Contact/Contact';
 import About from './Components/About/About';
 import Home from './Components/Home/Home';
 import Nav from './Components/Nav/Nav';
 import Projects from './Components/Projects/Projects';
-import { ThemeProvider } from 'styled-components';
-import { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
 import CV from './Components/CV/CV';
 
 const lightTheme = {

@@ -14,6 +14,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import NavModal from "./ModalResponsive";
+import Links from "../Links/Links";
 
 const Container = styled.nav`
 	background: ${props => props.theme.background};
@@ -112,6 +113,9 @@ const Nav = ({ theme, setTheme, themes }) => {
 					</Modal>
 				</div>
 			</div>
+			<div className={style.contact}>
+				<Links theme={themes} />
+			</div>
 			<div className={style.responsive}>
 				<button className={style.burger} onClick={() => setIsNavOpen(true)} aria-label="Menu">
 					<GiHamburgerMenu size="32" color={themes.color} />
@@ -143,21 +147,23 @@ const Nav = ({ theme, setTheme, themes }) => {
 								menuIsOpen={true}
 							/>
 						</Modal>
-						<Link className={style.link} to="home" spy={true} smooth={true} delay={300}>
+						<br />
+						<Link className={style.link} to="home" spy={true} smooth={true} onClick={() => setIsNavOpen(false)}>
 							{t("nav.home")}
 						</Link>
-						<Link className={style.link} to="about" spy={true} smooth={true} delay={300}>
+						<Link className={style.link} to="about" spy={true} smooth={true} onClick={() => setIsNavOpen(false)}>
 							{t("nav.about")}
 						</Link>
-						<Link className={style.link} to="projects" spy={true} smooth={true} delay={300}>
+						<Link className={style.link} to="projects" spy={true} smooth={true} onClick={() => setIsNavOpen(false)}>
 							{t("nav.projects")}
 						</Link>
-						<Link className={style.link} to="contact" spy={true} smooth={true} delay={300}>
+						<Link className={style.link} to="contact" spy={true} smooth={true} onClick={() => setIsNavOpen(false)}>
 							{t("nav.contact")}
 						</Link>
-						<RouterLink to="/cv" className={style.link} style={{ color: "inherit" }}>
+						<RouterLink to="/cv" className={style.link} style={{ color: "inherit" }} onClick={() => setIsNavOpen(false)}>
 							CV<FiArrowUpRight size={16} />
 						</RouterLink>
+						<Links theme={themes} />
 					</div>
 				</NavModal>
 			</div>

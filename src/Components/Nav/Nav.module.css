@@ -74,9 +74,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
 	height: 100%;
 	font-size: 18px;
+	margin-top: 5vh;
 }
 
 @media only screen and (max-width: 1366px) {
@@ -86,11 +86,15 @@
 }
 
 @media only screen and (max-width: 768px) {
-	.notResponsive {
+	.notResponsive, .contact {
 		display: none;
 	}
 
 	.responsive {
 		display: flex;
+	}
+
+	.link, .languages {
+		margin: 2vh 0;
 	}
 }

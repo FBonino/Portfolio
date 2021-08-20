@@ -1,6 +1,3 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
-import { IconContext } from "react-icons/lib";
 import style from "./Contact.module.css";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
@@ -20,14 +17,6 @@ const Form = styled.div`
 	&:hover {
 		box-shadow: 0 0 0.5rem ${props => props.theme.secondary};
 	};
-`;
-
-const Icon = styled.a`
-	background: ${props => props.theme.backgroundColor};
-	border: 2px solid ${props => props.theme.secondary};
-	&:hover {
-		filter: brightness(1.25);
-	}
 `;
 
 const Input = styled.input`
@@ -87,35 +76,28 @@ const Contact = ({ theme }) => {
 
 	return (
 		<Container className={style.container} id="contact">
-			<h1 style={{ marginTop: "7.5rem", marginBottom: "1rem" }}> {t("contact.title")} </h1>
+			<h1 className={style.title}> {t("contact.title")} </h1>
 			<Form className={style.form}>
 				<form onSubmit={handleSubmit} autoComplete="off">
 					<div className={style.formDiv}>
 						<Input id="name" className={style.input} {...register("name")} required />
-						<Label className={style.floatingLabel} for="name"> {t("contact.name")} </Label>
+						<Label className={style.floatingLabel} htmlFor="name"> {t("contact.name")} </Label>
 					</div>
 					<div className={style.formDiv}>
 						<Input id="email" className={style.input} {...register("email")} required />
-						<Label className={style.floatingLabel} for="email"> {t("contact.email")} </Label>
+						<Label className={style.floatingLabel} htmlFor="email"> {t("contact.email")} </Label>
 					</div>
 					<div className={style.formDiv}>
 						<Input id="subject" className={style.input} {...register("subject")} required />
-						<Label className={style.floatingLabel} for="subject"> {t("contact.subject")} </Label>
+						<Label className={style.floatingLabel} htmlFor="subject"> {t("contact.subject")} </Label>
 					</div>
 					<div className={style.formDiv}>
 						<Area id="message" cols="44" rows="10" style={{ resize: "vertical", padding: "0.4rem" }} {...register("text")} required />
-						<Label className={style.floatingLabel} for="message"> {t("contact.message")} </Label>
+						<Label className={style.floatingLabel} htmlFor="message"> {t("contact.message")} </Label>
 					</div>
 					<Send> {t("contact.send")} </Send>
 				</form>
 			</Form>
-			<div className={style.icons}>
-				<IconContext.Provider value={{ size: 28, color: theme.secondary }}>
-					<Icon className={style.icon} href="https://www.linkedin.com/in/fbonino/" aria-label="Linkedin"> < FaLinkedin /> </Icon>
-					<Icon className={style.icon} href="https://github.com/FBonino/" aria-label="Github"> < FaGithub /> </Icon>
-					<Icon className={style.icon} href="mailto:boninoffranco@gmail.com" aria-label="Gmail"> < SiGmail /> </Icon>
-				</IconContext.Provider>
-			</div>
 		</Container>
 	)
 }

@@ -22,8 +22,8 @@
 
 @media only screen and (max-width: 768px) {
 	.container {
-		left: 10rem;
-		top: 19vh;
+		left: 2.5rem;
+		top: 9vh;
 		width: fit-content;
 	}
 }

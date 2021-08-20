@@ -7,6 +7,11 @@
 	justify-content: space-evenly;
 }
 
+.title {
+	margin-top: 7.5rem; 
+	margin-bottom: 1rem;
+}
+
 .subcontainer {
 	display: flex;
 	justify-content: space-evenly;
@@ -36,11 +41,11 @@
 }
 
 .logos {
-	width: 60%;
+	width: 50%;
 	margin: 0 auto;
 	margin-bottom: 4rem;
 	border-radius: 1rem;
-	border: 5px solid grey;
+	border: 3px solid grey;
 	padding: 0.5rem 0;
 	background-color: lightgray;
 }
@@ -53,10 +58,63 @@
 .skills {
 	display: flex;
 	flex-wrap: wrap;
-	width: 80%;
+	width: 70%;
 	margin: auto;
 }
 
 .skills > p {
 	margin: 1rem;
+}
+
+@media only screen and (max-width: 1366px) {
+	.about {
+		width: 80%;
+	}
+
+	.skills {
+		width: 85%;
+	}
+
+	.logos {
+		width: 70%;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.about {
+		width: 90%;
+	}
+
+	.skills {
+		width: 100%;
+	}
+
+	.logos {
+		width: 80%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.about {
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.info {
+		width: 80%;
+	}
+
+	.logos {
+		width: 90%;
+	}
+
+	.logos img {
+		width: 8vw;
+		height: 8vw;
+	}
+
+	.title {
+		margin: 0;
+		margin-top: 1.5rem;
+	}
 }

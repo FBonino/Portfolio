@@ -21,6 +21,7 @@ const Project = styled.div`
 	margin: 4vw;
 	backgroundColor: ${props => props.theme.backgroundColor};
 	color: ${props => props.theme.color};
+	position: relative;
 `;
 
 const Projects = ({ theme }) => {
@@ -28,7 +29,7 @@ const Projects = ({ theme }) => {
 
 	return (
 		<Container className={style.container} id="projects">
-			<h1 style={{ marginTop: "7.5rem", marginBottom: "1rem" }}> {t("projects.title")} </h1>
+			<h1 className={style.title}> {t("projects.title")} </h1>
 			<div className={style.projects}>
 				<Project className={style.project}>
 					<div className={style.cardDiv}>
@@ -48,9 +49,9 @@ const Projects = ({ theme }) => {
 							<p> Prisma </p>
 						</div>
 					</div>
-					{/* <div className={style.cardDiv}>
-							<img className={style.projectImage} src={countries} alt="" />
-						</div> */}
+					<div className={style.cardImage}>
+						<img className={style.projectImage} src={countries} alt="" />
+					</div>
 				</Project>
 				<Project className={style.project}>
 					<div className={style.cardDiv}>
@@ -70,9 +71,9 @@ const Projects = ({ theme }) => {
 							<p> Express.js </p>
 						</div>
 					</div>
-					{/* <div className={style.cardDiv}>
-							<img className={style.projectImage} src={countries} alt="" />
-						</div> */}
+					<div className={style.cardImage}>
+						<img className={style.projectImage} src={countries} alt="" />
+					</div>
 				</Project>
 				<Project className={style.project}>
 					<div className={style.cardDiv}>
@@ -90,9 +91,9 @@ const Projects = ({ theme }) => {
 							<p> Redux </p>
 						</div>
 					</div>
-					{/* <div className={style.cardDiv}>
-							<img className={style.projectImage} src={movies} alt="" />
-						</div> */}
+					<div className={style.cardImage}>
+						<img className={style.projectImage} src={movies} alt="" />
+					</div>
 				</Project>
 				<Project className={style.project}>
 					<div className={style.cardDiv}>
@@ -110,9 +111,9 @@ const Projects = ({ theme }) => {
 							<p> CSS </p>
 						</div>
 					</div>
-					{/* <div className={style.cardDiv}>
-							<img className={style.projectImage} src={weather} alt="" />
-						</div> */}
+					<div className={style.cardImage}>
+						<img className={style.projectImage} src={weather} alt="" />
+					</div>
 				</Project>
 			</div>
 		</Container>

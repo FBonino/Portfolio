@@ -1,0 +1,32 @@
+.container {
+	position: fixed;
+	left: 2.5rem;
+	top: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon {
+	width: fit-content;
+	height: fit-content;
+	border-radius: 9999px;
+	padding: 0.25rem;
+	display: flex;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+@media only screen and (max-width: 768px) {
+	.container {
+		position: relative;
+		top: unset;
+		left: unset;
+		margin-top: 1rem;
+	}
+
+	.icon {
+		margin: 0.5rem 0;
+	}
+}
