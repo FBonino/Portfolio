@@ -69,16 +69,16 @@ const Nav = ({ theme, setTheme, themes }) => {
 		<Container className={style.container}>
 			<div className={style.notResponsive}>
 				<div className={style.subcontainer}>
-					<Link className={style.link} to="home" spy={true} smooth={true} delay={300} activeClass={style.active}>
+					<Link className={style.link} to="home" spy={true} smooth={true} delay={100} activeClass={style.active}>
 						{t("nav.home")}
 					</Link>
-					<Link className={style.link} to="about" spy={true} smooth={true} delay={300} activeClass={style.active}>
+					<Link className={style.link} to="about" spy={true} smooth={true} delay={100} activeClass={style.active}>
 						{t("nav.about")}
 					</Link>
-					<Link className={style.link} to="projects" spy={true} smooth={true} delay={300} activeClass={style.active}>
+					<Link className={style.link} to="projects" spy={true} smooth={true} delay={100} activeClass={style.active}>
 						{t("nav.projects")}
 					</Link>
-					<Link className={style.link} to="contact" spy={true} smooth={true} delay={300} activeClass={style.active}>
+					<Link className={style.link} to="contact" spy={true} smooth={true} delay={100} activeClass={style.active}>
 						{t("nav.contact")}
 					</Link>
 					<RouterLink to="/cv" className={style.link} style={{ color: "inherit" }}>
