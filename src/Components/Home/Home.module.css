@@ -59,6 +59,7 @@
 @media only screen and (max-width: 1366px) {
 	.title {
 		font-size: 50px;
+		margin: 0 1rem;
 	}
 	.description {
 		margin: 0 25vw;
@@ -89,7 +90,7 @@
 @media only screen and (max-width: 500px) {
 	.title {
 		font-size: 24	px;
-		margin: 0 1rem;
+		margin: 0 2.5rem;
 	}
 	.description {
 		width: 75%;

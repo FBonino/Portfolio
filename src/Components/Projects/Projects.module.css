@@ -15,24 +15,31 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin: 0 10rem;
+	margin: 4rem 10rem;
+}
+
+.project {
+	height: 16.8rem;
+	width: 30rem;
+	margin: 2vw;
+	position: relative;
 }
 
 .links {
 	display: flex; 
 	flex-direction: column;
 	align-items: center; 
-	text-decoration: none; 
-	color: black;
-	font-size: small;
-	margin: 0.4rem;
+	text-decoration: none;
+	margin-bottom: 1rem;
+	font-weight: 500;
+	padding: 1rem 1.5rem;
+	border-radius: 1rem;
+	margin: 0 1rem;
 }
 
 .projectImage {
 	width: 100%;
 	height: 100%;
-	min-width: 17rem;
-	cursor: pointer;
 }
 
 .cardDiv {
@@ -41,6 +48,7 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	justify-content: space-between;
 }
 
@@ -50,10 +58,12 @@
 	top: 0;
 	left: 0;
 	z-index: 1;
+	transition: 300ms;
 }
 
-.cardDiv:hover {
-	filter: brightness(1.1);
+.project:hover > .cardImage {
+	opacity: 0;
+	z-index: -1;
 }
 
 .cardDiv > h1 {
@@ -63,39 +73,86 @@
 
 .linksDiv {
 	display: flex;
-	position: absolute;
-	flex-direction: column;
-	top: 0.1rem;
-	right: 0.1rem;
-	z-index: 1;
 }
 
 .technologies {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	background-color: grey;
-	border-top: 2px solid black;
-	border-radius: 0 0 0.1rem 0.1rem;
 }
 
 .technologies > p {
 	margin: 1rem 0.5rem;
 	font-size: small;
+	font-weight: bold;
+}
+
+.projectTitle {
+	margin: 0;
 }
 
 @media only screen and (max-width: 1366px) {
-	
+	.projects {
+		margin: 4rem 5rem;
+	}
+
+	.project {
+		height: 12.5rem;
+		width: 22rem;
+	}
 }
 
 @media only screen and (max-width: 1024px) {
-	
+	.project {
+		height: 11.3rem;
+		width: 20rem;
+		font-size: small;
+	}
+
+	.links {
+		padding: 0.5rem 1rem;
+	}
+
+	.technologies > p {
+		margin: 0.75rem 0.5rem;
+	}
 }
 
 @media only screen and (max-width: 768px) {
-	
+	.project {
+		height: 14rem;
+		width: 25rem;
+	}
+
 	.title {
 		margin: 0;
 		margin-top: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.project {
+		width: 90vw;
+		height: 50vw;
+	}
+
+	.projects {
+		margin: 2.5rem 0.5rem;
+	}
+
+	.links {
+		padding: 0.25rem 0.75rem;
+	}
+
+	.technologies > p {
+		margin: 0.4rem 0.3rem;
+		font-size: smaller;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.links {
+		padding: 0.25rem 0.75rem;
+		transform: scale(0.8);
 	}
 }
