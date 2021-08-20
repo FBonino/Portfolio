@@ -15,17 +15,15 @@
 	"about": {
 		"title": "Sobre Mi",
 		"who": "¿Quien soy?",
-		"description": "Soy un Desarrollador Full Stack especializado en Javascript.",
-		"skills": "Habilidades",
-		"frontend": "Desarrollo Frontend",
-		"backend": "Desarrollo Backend",
-		"languages": "Lenguajes de Programacion",
-		"other": "Otras Tecnologías"
+		"description1": "Soy un Desarrollador Full Stack especializado en Javascript. Mi pasión por la programación empezó en la secundaria, donde aprendí las bases en Python. Debido a eso empecé la carrera de Ingeniería en Sistemas de Información, pero después de unas materias cursadas me di cuenta que la programación es lo que más me gusta y razón por la cual me anoté a un bootcamp para empezar a trabajar de lo que me apasiona.",
+		"description2": "Estoy interesado en cualquier desafío en el que pueda usar todo mi conocimiento y mi capacidad lógica, mientras que amplío mis habilidades y aprendo nuevas tecnologías.",
+		"description3": "Algunas de las tecnologías que conozco son: ",
+		"skills": "Tecnologías"
 	},
 	"projects": {
 		"title": "Proyectos",
-		"visit": "Visitar Proyecto",
-		"more": "Más Información"
+		"visit": "Visitar",
+		"more": "Repo"
 	},
 	"contact": {
 		"title": "Contactame",
@@ -42,5 +40,9 @@
 			"title": "Algo salió mal",
 			"text": "Ocurrió un error y el email no se pudo enviar."
 		}
+	},
+	"cv": {
+		"back": "Volver",
+		"loading": "Cargando..."
 	}
 }

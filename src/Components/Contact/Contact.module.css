@@ -1,6 +1,6 @@
 .container {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	flex-direction: column;
 	align-items: center;
 	min-height: 100vh;
@@ -10,6 +10,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 3rem;
 }
 
 .icon {
@@ -26,7 +27,7 @@
 	width: fit-content;
 	padding: 2rem 4rem;
 	transition: 300ms ease;
-	margin-top: 5vh;
+	font-weight: 600;
 }
 
 .formDiv {
@@ -55,4 +56,11 @@
 	left: 0.05rem;
 	font-size: small;
 	filter: invert();
+}
+
+@media only screen and (max-width: 500px) {
+	.form {
+		padding: 1rem;
+		transform: scaleX(0.75) scaleY(0.85);
+	}
 }

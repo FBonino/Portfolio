@@ -6,7 +6,8 @@ import Carousel, { autoplayPlugin, slidesToShowPlugin } from '@brainhubeu/react-
 import '@brainhubeu/react-carousel/lib/style.css';
 
 const Container = styled.div`
-	background-color: ${props => props.theme.background};
+	background: ${props => props.theme.background};
+	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
 `;
 
@@ -14,7 +15,7 @@ const About = ({ theme }) => {
 	const [t] = useTranslation("global");
 	return (
 		<Container className={style.container} id="about">
-			<h1 style={{ marginTop: "5rem" }}> {t("about.title")} </h1>
+			<h1 style={{ marginTop: "7.5rem", marginBottom: "1rem" }}> {t("about.title")} </h1>
 			<div className={style.about}>
 				<img className={style.profilePic} src={profile} alt="Profile pic" />
 				<div className={style.info}>
@@ -43,7 +44,7 @@ const About = ({ theme }) => {
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" />
+				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" style={{ transform: "scale(1.4)" }} />
 				<img src="https://www.nextontop.com/assets/img/services/web/expressjs.svg" background-color="#ffffff" alt="express" style={{ transform: "scale(1.57)" }} />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" />
 				<img src="https://images.tute.io/tute/topic/prisma.png" alt="prisma" style={{ transform: "scale(1.57)", filter: "brightness(3)" }} />

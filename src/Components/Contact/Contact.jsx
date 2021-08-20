@@ -9,20 +9,21 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const Container = styled.div`
-	background-color: ${props => props.theme.background};
+	background: ${props => props.theme.background};
+	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
 `;
 
 const Form = styled.div`
 	border: 1px solid ${props => props.theme.color};
-	box-shadow: 0 0 0.25rem ${props => props.theme.secondary};
+	box-shadow: 0 0 0.4rem ${props => props.theme.secondary};
 	&:hover {
-		box-shadow: 0 0 0.4rem ${props => props.theme.secondary};
+		box-shadow: 0 0 0.5rem ${props => props.theme.secondary};
 	};
 `;
 
 const Icon = styled.a`
-	background-color: ${props => props.theme.color};
+	background: ${props => props.theme.backgroundColor};
 	border: 2px solid ${props => props.theme.secondary};
 	&:hover {
 		filter: brightness(1.25);
@@ -30,31 +31,33 @@ const Icon = styled.a`
 `;
 
 const Input = styled.input`
-	background-color: ${props => props.theme.color};
-	color: ${props => props.theme.background};
+	background: ${props => props.theme.color};
+	color: ${props => props.theme.backgroundColor};
+	border: 2px solid ${props => props.theme.backgroundColor};
 `;
 
 const Area = styled.textarea`
-	background-color: ${props => props.theme.color};
-	color: ${props => props.theme.background};
+	background: ${props => props.theme.color};
+	color: ${props => props.theme.backgroundColor};
+	border: 2px solid ${props => props.theme.backgroundColor};
 	resize: vertical;
 	padding: 0.4rem;
 `;
 
 const Label = styled.label`
-	color: ${props => props.theme.background};
+	color: ${props => props.theme.backgroundColor};
 `;
 
 const Send = styled.button`
 	padding: 0.5rem;
 	border: none;
-	background-color: ${props => props.theme.color};
+	background: ${props => props.theme.backgroundColor};
 	border-radius: 1rem;
 	font-weight: 600;
 	cursor: pointer;
-	color: ${props => props.theme.background};
+	color: ${props => props.theme.color};
 	&:hover {
-		filter: brightness(1.1);
+		background-color: ${props => props.theme.primary};
 	}
 `;
 
@@ -84,8 +87,8 @@ const Contact = ({ theme }) => {
 
 	return (
 		<Container className={style.container} id="contact">
+			<h1 style={{ marginTop: "7.5rem", marginBottom: "1rem" }}> {t("contact.title")} </h1>
 			<Form className={style.form}>
-				<h3> {t("contact.title")} </h3>
 				<form onSubmit={handleSubmit} autoComplete="off">
 					<div className={style.formDiv}>
 						<Input className={style.input} {...register("name")} required />

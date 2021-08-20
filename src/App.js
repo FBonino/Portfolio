@@ -5,6 +5,8 @@ import Nav from './Components/Nav/Nav';
 import Projects from './Components/Projects/Projects';
 import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import CV from './Components/CV/CV';
 
 const lightTheme = {
   background: "#E1E5EA",
@@ -14,7 +16,10 @@ const lightTheme = {
 }
 
 const darkTheme = {
-  background: "#222831",
+  background: "linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%)",
+  backgroundBlend: "multiply",
+  backgroundImage: "linear-gradient(60deg, #29323c 0%, #485563 100%)",
+  backgroundColor: "#222831",
   color: "#DDDDDD",
   primary: "#30475E",
   secondary: "#F05454"
@@ -29,13 +34,20 @@ function App() {
   const [theme, setTheme] = useState(localStorage.getItem("Theme") || "light");
 
   return (
-    <ThemeProvider theme={themes[theme]}>
-      <Home theme={themes[theme]} />
-      <Nav theme={theme} setTheme={setTheme} themes={themes[theme]} />
-      <About theme={themes[theme]} />
-      <Projects theme={themes[theme]} />
-      <Contact theme={themes[theme]} />
-    </ThemeProvider>
+    <div>
+      <ThemeProvider theme={themes[theme]}>
+        <Switch>
+          <Route exact path="/">
+            <Home theme={themes[theme]} />
+            <Nav theme={theme} setTheme={setTheme} themes={themes[theme]} />
+            <About theme={themes[theme]} />
+            <Projects theme={themes[theme]} />
+            <Contact theme={themes[theme]} />
+          </Route>
+          <Route exact path="/cv" component={CV} />
+        </Switch>
+      </ThemeProvider>
+    </div>
   );
 }
 

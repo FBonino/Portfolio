@@ -2,7 +2,7 @@ import { Link } from "react-scroll";
 import ReactSwitch from "react-switch";
 import Modal from "./Modal";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { BiWorld } from "react-icons/bi";
+import { MdLanguage } from "react-icons/md";
 import style from "./Nav.module.css";
 import Select, { components } from "react-select";
 import en from "../../assets/en.jpg";
@@ -10,13 +10,17 @@ import es from "../../assets/es.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import { Link as RouterLink } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
+import { GiHamburgerMenu } from "react-icons/gi";
+import NavModal from "./ModalResponsive";
 
 const Container = styled.nav`
-	background-color: ${props => props.theme.background};
+	background: ${props => props.theme.background};
+	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
 	box-shadow: 0 0 0.75rem ${props => props.theme.secondary};
 	filter: brightness(1.5);
-	opacity: 0.9;
 `;
 
 const { Option } = components;
@@ -43,6 +47,7 @@ const selectStyle = {
 const Nav = ({ theme, setTheme, themes }) => {
 	const [t, i18n] = useTranslation("global");
 	const [isOpen, setIsOpen] = useState(false);
+	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [language, setLanguage] = useState(localStorage.getItem("Language"));
 	const options = [{ value: "en", icon: en }, { value: "es", icon: es }];
 
@@ -61,46 +66,100 @@ const Nav = ({ theme, setTheme, themes }) => {
 
 	return (
 		<Container className={style.container}>
-			<div className={style.subcontainer}>
-				<Link className={style.link} to="home" spy={true} smooth={true} delay={500} activeClass={style.active}>
-					{t("nav.home")}
-				</Link>
-				<Link className={style.link} to="about" spy={true} smooth={true} delay={500} activeClass={style.active}>
-					{t("nav.about")}
-				</Link>
-				<Link className={style.link} to="projects" spy={true} smooth={true} delay={500} activeClass={style.active}>
-					{t("nav.projects")}
-				</Link>
-				<Link className={style.link} to="contact" spy={true} smooth={true} delay={500} activeClass={style.active}>
-					{t("nav.contact")}
-				</Link>
-			</div>
-			<div className={style.subcontainer}>
-				<ReactSwitch
-					onChange={handleTheme}
-					checkedIcon={<FaSun className={style.switchIcon} />}
-					uncheckedIcon={<FaMoon className={style.switchIcon} />}
-					checked={theme === "dark"}
-					offHandleColor="#222831"
-					offColor="#30475E"
-					onHandleColor="#FAF3F3"
-					onColor="#F05454"
-				/>
-				<button className={style.languages} onClick={() => setIsOpen(true)}>
-					<BiWorld size="32" color={themes.color} />
-				</button>
-				<Modal open={isOpen} onClose={() => setIsOpen(false)}>
-					<Select
-						value={options.filter(option => option.value === language)}
-						options={options}
-						components={{ Option: Icon, Control: () => null }}
-						styles={selectStyle}
-						onChange={handleLanguage}
-						isClearable={false}
-						isSearchable={false}
-						menuIsOpen={true}
+			<div className={style.notResponsive}>
+				<div className={style.subcontainer}>
+					<Link className={style.link} to="home" spy={true} smooth={true} delay={300} activeClass={style.active}>
+						{t("nav.home")}
+					</Link>
+					<Link className={style.link} to="about" spy={true} smooth={true} delay={300} activeClass={style.active}>
+						{t("nav.about")}
+					</Link>
+					<Link className={style.link} to="projects" spy={true} smooth={true} delay={300} activeClass={style.active}>
+						{t("nav.projects")}
+					</Link>
+					<Link className={style.link} to="contact" spy={true} smooth={true} delay={300} activeClass={style.active}>
+						{t("nav.contact")}
+					</Link>
+					<RouterLink to="/cv" className={style.link} style={{ color: "inherit" }}>
+						CV<FiArrowUpRight size={16} />
+					</RouterLink>
+				</div>
+				<div className={style.subcontainer}>
+					<ReactSwitch
+						onChange={handleTheme}
+						checkedIcon={<FaSun className={style.switchIcon} />}
+						uncheckedIcon={<FaMoon className={style.switchIcon} />}
+						checked={theme === "dark"}
+						offHandleColor="#222831"
+						offColor="#30475E"
+						onHandleColor="#FAF3F3"
+						onColor="#F05454"
 					/>
-				</Modal>
+					<button className={style.languages} onClick={() => setIsOpen(true)}>
+						<MdLanguage size="32" color={themes.color} />
+					</button>
+					<Modal open={isOpen} onClose={() => setIsOpen(false)}>
+						<Select
+							value={options.filter(option => option.value === language)}
+							options={options}
+							components={{ Option: Icon, Control: () => null }}
+							styles={selectStyle}
+							onChange={handleLanguage}
+							isClearable={false}
+							isSearchable={false}
+							menuIsOpen={true}
+						/>
+					</Modal>
+				</div>
+			</div>
+			<div className={style.responsive}>
+				<button className={style.burger} onClick={() => setIsNavOpen(true)}>
+					<GiHamburgerMenu size="32" color={themes.color} />
+				</button>
+				<NavModal open={isNavOpen} onClose={() => setIsNavOpen(false)}>
+					<div className={style.modalContainer}>
+						<ReactSwitch
+							onChange={handleTheme}
+							checkedIcon={<FaSun className={style.switchIcon} />}
+							uncheckedIcon={<FaMoon className={style.switchIcon} />}
+							checked={theme === "dark"}
+							offHandleColor="#222831"
+							offColor="#30475E"
+							onHandleColor="#FAF3F3"
+							onColor="#F05454"
+						/>
+						<button className={style.languages} onClick={() => setIsOpen(true)}>
+							<MdLanguage size="32" color={themes.color} />
+						</button>
+						<Modal open={isOpen} onClose={() => setIsOpen(false)}>
+							<Select
+								value={options.filter(option => option.value === language)}
+								options={options}
+								components={{ Option: Icon, Control: () => null }}
+								styles={selectStyle}
+								onChange={handleLanguage}
+								isClearable={false}
+								isSearchable={false}
+								menuIsOpen={true}
+							/>
+						</Modal>
+						<Link className={style.link} to="home" spy={true} smooth={true} delay={300}>
+							{t("nav.home")}
+						</Link>
+						<Link className={style.link} to="about" spy={true} smooth={true} delay={300}>
+							{t("nav.about")}
+						</Link>
+						<Link className={style.link} to="projects" spy={true} smooth={true} delay={300}>
+							{t("nav.projects")}
+						</Link>
+						<Link className={style.link} to="contact" spy={true} smooth={true} delay={300}>
+							{t("nav.contact")}
+						</Link>
+						<RouterLink to="/cv" className={style.link} style={{ color: "inherit" }}>
+							CV<FiArrowUpRight size={16} />
+						</RouterLink>
+					</div>
+				</NavModal>
 			</div>
 		</Container>
 	)

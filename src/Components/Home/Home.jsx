@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const Container = styled.div`
-	background-color: ${props => props.theme.background};
+	background: ${props => props.theme.background};
+	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
 `;
 
@@ -15,12 +16,12 @@ const Home = ({ theme }) => {
 	return (
 		<Container className={style.container} id="home">
 			<div>
-				<h3 className={style.title}> {t("home.hi")} </h3>
+				<h1 className={style.title}> {t("home.hi")} </h1>
 				<h1 className={style.title}> Franco Bonino Fernandez </h1>
 				<h1 className={style.title}> {t("home.dev")} </h1>
 			</div>
-			<div style={{ width: "25rem", textAlign: "justify" }}>
-				<p> {t("home.desc")} </p>
+			<div className={style.description}>
+				<p style={{ marginBottom: "2rem" }}> {t("home.desc")} </p>
 				<a href="mailto:boninoffranco@gmail.com" className={style.button}> {t("home.contact")} </a>
 			</div>
 			<div className={style.more}>
