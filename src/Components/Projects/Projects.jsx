@@ -1,7 +1,7 @@
 import style from "./Projects.module.css";
-import weather from "../../assets/weather.png";
-import movies from "../../assets/movies.png";
-import countries from "../../assets/countries.png";
+import weather from "../../assets/weather.webp";
+import movies from "../../assets/movies.webp";
+import countries from "../../assets/countries.webp";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { FiArrowUpRight } from "react-icons/fi";

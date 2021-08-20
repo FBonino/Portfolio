@@ -47,8 +47,7 @@
 
 .cardImage {
 	position: absolute;
-	height: 22vh;
-	width: 20vw;
+	width: 100%;
 	top: 0;
 	left: 0;
 	z-index: 1;
