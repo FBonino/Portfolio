@@ -92,7 +92,7 @@
 
 .technologies > p {
 	margin: 1rem 0.5rem;
-	font-size: small;
+	font-size: 13px;
 	font-weight: bold;
 }
 
@@ -115,7 +115,7 @@
 	.project {
 		height: 11.3rem;
 		width: 20rem;
-		font-size: small;
+		font-size: 12px;
 	}
 
 	.links {
@@ -155,7 +155,7 @@
 
 	.technologies > p {
 		margin: 0.4rem 0.3rem;
-		font-size: smaller;
+		font-size: 11px;
 	}
 }
 

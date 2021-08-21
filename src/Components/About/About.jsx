@@ -1,5 +1,4 @@
 import style from "./About.module.css";
-// import profile from "/public/assets/profile.jpg";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Carousel, { autoplayPlugin, slidesToShowPlugin } from '@brainhubeu/react-carousel';

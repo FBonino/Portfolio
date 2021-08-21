@@ -1,12 +1,12 @@
+import { useState, lazy } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Contact from './Components/Contact/Contact';
-import About from './Components/About/About';
-import Home from './Components/Home/Home';
-import Nav from './Components/Nav/Nav';
-import Projects from './Components/Projects/Projects';
-import CV from './Components/CV/CV';
+const Contact = lazy(() => import('./Components/Contact/Contact'));
+const About = lazy(() => import('./Components/About/About'));
+const Home = lazy(() => import('./Components/Home/Home'));
+const Nav = lazy(() => import('./Components/Nav/Nav'));
+const Projects = lazy(() => import('./Components/Projects/Projects'));
+const CV = lazy(() => import('./Components/CV/CV'));
 
 // const lightTheme = {
 //   background: "#DCD9D4",

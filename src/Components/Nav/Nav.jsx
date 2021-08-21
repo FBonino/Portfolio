@@ -1,18 +1,18 @@
+import { lazy, useState } from "react";
 import { Link } from "react-scroll";
 import ReactSwitch from "react-switch";
-import Modal from "./Modal";
-import { FaSun, FaMoon } from "react-icons/fa";
-import { MdLanguage } from "react-icons/md";
 import style from "./Nav.module.css";
-import Select, { components } from "react-select";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import Select, { components } from "react-select";
+import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";
+import { MdLanguage } from "react-icons/md";
+import { FaSun, FaMoon } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import NavModal from "./ModalResponsive";
-import Links from "../Links/Links";
+const Modal = lazy(() => import("./Modal"));
+const NavModal = lazy(() => import("./ModalResponsive"));
+const Links = lazy(() => import("../Links/Links"));
 
 const Container = styled.nav`
 	background: ${props => props.theme.background};
