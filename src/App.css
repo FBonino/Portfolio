@@ -1,0 +1,19 @@
+.logoDiv {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(to right, #434343 0%, black 100%);
+	position: absolute;
+	top: 0;
+	left: -100vh;
+	z-index: 999;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	font-size: 36;
+	padding: 2rem;
+	color: #FD7014;
+	border: 2px solid #FD7014;
+}

@@ -1,20 +1,14 @@
-import { useState, lazy } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
-const Contact = lazy(() => import('./Components/Contact/Contact'));
-const About = lazy(() => import('./Components/About/About'));
-const Home = lazy(() => import('./Components/Home/Home'));
-const Nav = lazy(() => import('./Components/Nav/Nav'));
-const Projects = lazy(() => import('./Components/Projects/Projects'));
-const CV = lazy(() => import('./Components/CV/CV'));
-
-// const lightTheme = {
-//   background: "#DCD9D4",
-//   backgroundBlend: "soft-light,screen",
-//   color: "#222831",
-//   primary: "#A7BBC7",
-//   secondary: "#DA7F8F"
-// }
+import { gsap } from "gsap";
+import "./App.css";
+import Contact from './Components/Contact/Contact';
+import About from './Components/About/About';
+import Home from './Components/Home/Home';
+import Nav from './Components/Nav/Nav';
+import Projects from './Components/Projects/Projects';
+import CV from './Components/CV/CV';
 
 const lightTheme = {
   background: "#DDDDDD",
@@ -22,15 +16,6 @@ const lightTheme = {
   primary: "#393E46",
   secondary: "#FD7014"
 }
-
-// const darkTheme = {
-//   background: "linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%)",
-//   backgroundBlend: "multiply",
-//   background: "#222831",
-//   color: "#DDDDDD",
-//   primary: "#30475E",
-//   secondary: "#F05454"
-// }
 
 const darkTheme = {
   background: "#222831",
@@ -46,9 +31,23 @@ const themes = {
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("Theme") || "light");
+  // const logoRef = useRef();
+  // const subLogo = gsap.utils.selector(logoRef);
+
+  // useEffect(async () => {
+  //   await gsap.to(logoRef.current, { x: "100vh" });
+  //   await gsap.to(subLogo(".logo"), { rotate: 360 });
+  //   await gsap.to(logoRef.current, { x: "300vh" });
+  //   await gsap.to(logoRef.current, { display: "none" });
+  // })
 
   return (
     <div>
+      {/* <div className="logoDiv" ref={logoRef}>
+        <div className="logo">
+          FBF
+        </div>
+      </div> */}
       <ThemeProvider theme={themes[theme]}>
         <Switch>
           <Route exact path="/">
