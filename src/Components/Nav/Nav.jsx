@@ -5,8 +5,6 @@ import { FaSun, FaMoon } from "react-icons/fa";
 import { MdLanguage } from "react-icons/md";
 import style from "./Nav.module.css";
 import Select, { components } from "react-select";
-import en from "../../assets/en.jpg";
-import es from "../../assets/es.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
@@ -49,7 +47,7 @@ const Nav = ({ theme, setTheme, themes }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [language, setLanguage] = useState(localStorage.getItem("Language"));
-	const options = [{ value: "en", icon: en }, { value: "es", icon: es }];
+	const options = [{ value: "en", icon: "/assets/en.jpg" }, { value: "es", icon: "/assets/es.png" }];
 
 	const handleTheme = () => {
 		let temp = theme === "light" ? "dark" : "light";

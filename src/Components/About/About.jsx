@@ -1,5 +1,5 @@
 import style from "./About.module.css";
-import profile from "../../assets/profile.jpg"
+// import profile from "/public/assets/profile.jpg";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Carousel, { autoplayPlugin, slidesToShowPlugin } from '@brainhubeu/react-carousel';
@@ -25,7 +25,7 @@ const About = ({ theme }) => {
 		<Container className={style.container} id="about">
 			<h1 className={style.title}> {t("about.title")} </h1>
 			<div className={style.about}>
-				<Profile className={style.profilePic} src={profile} alt="Profile pic" />
+				<Profile className={style.profilePic} src={"/assets/profile.jpg"} alt="Profile pic" />
 				<div className={style.info}>
 					<h2> {t("about.who")} </h2>
 					<p>	{t("about.description1")} </p>

@@ -1,7 +1,4 @@
 import style from "./Projects.module.css";
-import weather from "../../assets/weather.webp";
-import movies from "../../assets/movies.webp";
-import countries from "../../assets/countries.webp";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
@@ -25,7 +22,7 @@ const Card = styled.div`
 const Techs = styled.div`
 	background-color: ${props => props.theme.secondary};
 	border-top: 2px solid ${props => props.theme.primary};
-	color: ${props => props.theme.background};
+	color: black;
 `;
 
 const Projects = ({ theme }) => {
@@ -56,7 +53,7 @@ const Projects = ({ theme }) => {
 							</Techs>
 						</Card>
 						<div className={style.cardImage}>
-							<img className={style.projectImage} src={countries} alt="" />
+							<img className={style.projectImage} src={"/assets/countries.webp"} alt="" />
 						</div>
 					</Project>
 					<Project className={style.project}>
@@ -78,7 +75,7 @@ const Projects = ({ theme }) => {
 							</Techs>
 						</Card>
 						<div className={style.cardImage}>
-							<img className={style.projectImage} src={countries} alt="" />
+							<img className={style.projectImage} src={"/assets/countries.webp"} alt="" />
 						</div>
 					</Project>
 					<Project className={style.project}>
@@ -98,7 +95,7 @@ const Projects = ({ theme }) => {
 							</Techs>
 						</Card>
 						<div className={style.cardImage}>
-							<img className={style.projectImage} src={movies} alt="" />
+							<img className={style.projectImage} src={"/assets/movies.webp"} alt="" />
 						</div>
 					</Project>
 					<Project className={style.project}>
@@ -118,7 +115,7 @@ const Projects = ({ theme }) => {
 							</Techs>
 						</Card>
 						<div className={style.cardImage}>
-							<img className={style.projectImage} src={weather} alt="" />
+							<img className={style.projectImage} src={"/assets/weather.webp"} alt="" />
 						</div>
 					</Project>
 				</div>
