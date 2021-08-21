@@ -24,7 +24,7 @@ const About = ({ theme }) => {
 		<Container className={style.container} id="about">
 			<h1 className={style.title}> {t("about.title")} </h1>
 			<div className={style.about}>
-				<Profile className={style.profilePic} src={"/assets/profile.jpg"} alt="Profile pic" />
+				<Profile className={style.profilePic} src={"/assets/profile.webp"} alt="Profile pic" />
 				<div className={style.info}>
 					<h2> {t("about.who")} </h2>
 					<p>	{t("about.description1")} </p>

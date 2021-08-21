@@ -47,7 +47,7 @@ const Nav = ({ theme, setTheme, themes }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [language, setLanguage] = useState(localStorage.getItem("Language"));
-	const options = [{ value: "en", icon: "/assets/en.jpg" }, { value: "es", icon: "/assets/es.png" }];
+	const options = [{ value: "en", icon: "/assets/en.webp" }, { value: "es", icon: "/assets/es.webp" }];
 
 	const handleTheme = () => {
 		let temp = theme === "light" ? "dark" : "light";
