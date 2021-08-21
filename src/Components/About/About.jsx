@@ -18,7 +18,7 @@ const StyledCarousel = styled(Carousel)`
 	border: 3px solid ${props => props.theme.secondary};
 `;
 
-const About = ({ theme }) => {
+const About = () => {
 	const [t] = useTranslation("global");
 	return (
 		<Container className={style.container} id="about">

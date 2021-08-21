@@ -46,7 +46,7 @@ const Send = styled.button`
 	}
 `;
 
-const Contact = ({ theme }) => {
+const Contact = () => {
 	const [t] = useTranslation("global");
 	const { register, watch, reset } = useForm({ mode: "onBlur" });
 	const nameValue = watch("name");

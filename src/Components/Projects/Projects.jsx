@@ -25,7 +25,7 @@ const Techs = styled.div`
 	color: black;
 `;
 
-const Projects = ({ theme }) => {
+const Projects = () => {
 	const [t] = useTranslation("global");
 
 	return (
