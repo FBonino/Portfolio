@@ -9,7 +9,6 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 
 const Container = styled.div`
 	background: ${props => props.theme.background};
-	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
 `;
 

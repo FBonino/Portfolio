@@ -18,10 +18,9 @@ import Links from "../Links/Links";
 
 const Container = styled.nav`
 	background: ${props => props.theme.background};
-	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
 	box-shadow: 0 0 0.75rem ${props => props.theme.secondary};
-	filter: brightness(1.5);
+	filter: brightness(1.25);
 `;
 
 const { Option } = components;
@@ -92,9 +91,9 @@ const Nav = ({ theme, setTheme, themes }) => {
 						uncheckedIcon={<FaMoon className={style.switchIcon} />}
 						checked={theme === "dark"}
 						offHandleColor="#222831"
-						offColor="#30475E"
+						offColor="#FD7014"
 						onHandleColor="#FAF3F3"
-						onColor="#F05454"
+						onColor="#FD7014"
 					/>
 					<button className={style.languages} onClick={() => setIsOpen(true)} aria-label="Language">
 						<MdLanguage size="32" color={themes.color} />
@@ -128,9 +127,9 @@ const Nav = ({ theme, setTheme, themes }) => {
 							uncheckedIcon={<FaMoon className={style.switchIcon} />}
 							checked={theme === "dark"}
 							offHandleColor="#222831"
-							offColor="#30475E"
+							offColor="#FD7014"
 							onHandleColor="#FAF3F3"
-							onColor="#F05454"
+							onColor="#FD7014"
 						/>
 						<button className={style.languages} onClick={() => setIsOpen(true)} aria-label="Language">
 							<MdLanguage size="32" color={themes.color} />

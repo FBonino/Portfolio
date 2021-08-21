@@ -6,8 +6,17 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	background: ${props => props.theme.background};
-	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
+`;
+
+const StyledLink = styled.a`
+	background: ${props => props.theme.color};
+	color: ${props => props.theme.background};
+	&:hover {
+		background: ${props => props.theme.secondary};
+		font-weight: 700;
+		transform: scale(1.05);
+	}
 `;
 
 const Home = ({ theme }) => {
@@ -22,10 +31,10 @@ const Home = ({ theme }) => {
 			</div>
 			<div className={style.description}>
 				<p style={{ marginBottom: "2rem" }}> {t("home.desc")} </p>
-				<a href="mailto:boninoffranco@gmail.com" className={style.button}> {t("home.contact")} </a>
+				<StyledLink href="mailto:boninoffranco@gmail.com" className={style.button}> {t("home.contact")} </StyledLink>
 			</div>
 			<Link className={style.link} to="about" spy={true} smooth={true}>
-				<div className={style.more}>
+				<div className={style.more} style={{ color: theme.color }}>
 					{t("home.more")}
 					<TiArrowSortedDown className={style.arrow} size="42" color={theme.color} />
 				</div>

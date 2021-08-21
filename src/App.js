@@ -8,21 +8,35 @@ import Nav from './Components/Nav/Nav';
 import Projects from './Components/Projects/Projects';
 import CV from './Components/CV/CV';
 
+// const lightTheme = {
+//   background: "#DCD9D4",
+//   backgroundBlend: "soft-light,screen",
+//   color: "#222831",
+//   primary: "#A7BBC7",
+//   secondary: "#DA7F8F"
+// }
+
 const lightTheme = {
-  background: "#E1E5EA",
+  background: "#DDDDDD",
   color: "#222831",
-  primary: "#A7BBC7",
-  secondary: "#DA7F8F"
+  primary: "#393E46",
+  secondary: "#FD7014"
 }
 
+// const darkTheme = {
+//   background: "linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%)",
+//   backgroundBlend: "multiply",
+//   background: "#222831",
+//   color: "#DDDDDD",
+//   primary: "#30475E",
+//   secondary: "#F05454"
+// }
+
 const darkTheme = {
-  background: "linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%)",
-  backgroundBlend: "multiply",
-  backgroundImage: "linear-gradient(60deg, #29323c 0%, #485563 100%)",
-  backgroundColor: "#222831",
+  background: "#222831",
   color: "#DDDDDD",
-  primary: "#30475E",
-  secondary: "#F05454"
+  primary: "#393E46",
+  secondary: "#FD7014"
 }
 
 const themes = {

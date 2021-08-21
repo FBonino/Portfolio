@@ -10,32 +10,22 @@ import { IconContext } from "react-icons/lib";
 
 const Container = styled.div`
 	background: ${props => props.theme.background};
-	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
 `;
 
 const Project = styled.div`
 	box-shadow: 0 0 0.3rem ${props => props.theme.primary};
-	background-color: ${props => props.theme.backgroundColor};
-	color: ${props => props.theme.color};
+	background-color: ${props => props.theme.background};
 `;
 
 const Card = styled.div`
-	background-color: ${props => props.theme.backgroundColor};
-`;
-
-const Link = styled.a`
-	color: ${props => props.theme.color};
-	border: 2px solid ${props => props.theme.color};
-	&:hover {
-		background-color: ${props => props.theme.primary};
-	}
+	background-color: ${props => props.theme.primary};
 `;
 
 const Techs = styled.div`
 	background-color: ${props => props.theme.secondary};
 	border-top: 2px solid ${props => props.theme.primary};
-	color: ${props => props.theme.backgroundColor};
+	color: ${props => props.theme.background};
 `;
 
 const Projects = ({ theme }) => {
@@ -43,23 +33,24 @@ const Projects = ({ theme }) => {
 
 	return (
 		<Container className={style.container} id="projects">
-			<IconContext.Provider value={{ size: 36, color: theme.color }}>
+			<IconContext.Provider value={{ size: 36, color: "#DDDDDD" }}>
 				<h1 className={style.title}> {t("projects.title")} </h1>
 				<div className={style.projects}>
 					<Project className={style.project}>
 						<Card className={style.cardDiv}>
 							<h1 className={style.projectTitle}> AltaBirra </h1>
 							<div className={style.linksDiv}>
-								<Link href="https://github.com/FBonino/Funtivity" className={style.links}>
+								<a href="https://github.com/FBonino/Funtivity" className={style.links}>
 									<FaGithub /> {t("projects.more")}
-								</Link>
-								<Link href="https://alta-birra.vercel.app" className={style.links}>
+								</a>
+								<a href="https://alta-birra.vercel.app" className={style.links}>
 									<FiArrowUpRight /> {t("projects.visit")}
-								</Link>
+								</a>
 							</div>
 							<Techs className={style.technologies}>
 								<p> Typescript </p>
 								<p> React </p>
+								<p> Node.js </p>
 								<p> Express.js </p>
 								<p> Prisma </p>
 							</Techs>
@@ -72,12 +63,12 @@ const Projects = ({ theme }) => {
 						<Card className={style.cardDiv}>
 							<h1 className={style.projectTitle}> Funtivity </h1>
 							<div className={style.linksDiv}>
-								<Link href="https://github.com/FBonino/Funtivity" className={style.links}>
+								<a href="https://github.com/FBonino/Funtivity" className={style.links}>
 									<FaGithub /> {t("projects.more")}
-								</Link>
-								<Link href="http://funtivity.vercel.app" className={style.links}>
+								</a>
+								<a href="http://funtivity.vercel.app" className={style.links}>
 									<FiArrowUpRight /> {t("projects.visit")}
-								</Link>
+								</a>
 							</div>
 							<Techs className={style.technologies}>
 								<p> React </p>
@@ -94,12 +85,12 @@ const Projects = ({ theme }) => {
 						<Card className={style.cardDiv}>
 							<h1 className={style.projectTitle}> MoviesApp </h1>
 							<div className={style.linksDiv}>
-								<Link href="https://github.com/FBonino/MoviesApp" className={style.links}>
+								<a href="https://github.com/FBonino/MoviesApp" className={style.links}>
 									<FaGithub /> {t("projects.more")}
-								</Link>
-								<Link href="https://movies-app-fbonino.vercel.app" className={style.links}>
+								</a>
+								<a href="https://movies-app-fbonino.vercel.app" className={style.links}>
 									<FiArrowUpRight /> {t("projects.visit")}
-								</Link>
+								</a>
 							</div>
 							<Techs className={style.technologies}>
 								<p> React </p>
@@ -114,12 +105,12 @@ const Projects = ({ theme }) => {
 						<Card className={style.cardDiv}>
 							<h1 className={style.projectTitle}> WeatherApp </h1>
 							<div className={style.linksDiv}>
-								<Link href="https://github.com/FBonino/WeatherApp" className={style.links}>
+								<a href="https://github.com/FBonino/WeatherApp" className={style.links}>
 									<FaGithub /> {t("projects.more")}
-								</Link>
-								<Link href="https://weather-app-fbonino.vercel.app" className={style.links}>
+								</a>
+								<a href="https://weather-app-fbonino.vercel.app" className={style.links}>
 									<FiArrowUpRight /> {t("projects.visit")}
-								</Link>
+								</a>
 							</div>
 							<Techs className={style.technologies}>
 								<p> React </p>

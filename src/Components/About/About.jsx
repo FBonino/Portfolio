@@ -7,8 +7,16 @@ import '@brainhubeu/react-carousel/lib/style.css';
 
 const Container = styled.div`
 	background: ${props => props.theme.background};
-	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
+`;
+
+const Profile = styled.img`
+	box-shadow: 0 0 0.75rem ${props => props.theme.primary};
+`;
+
+const StyledCarousel = styled(Carousel)`
+	background-color: ${props => props.theme.primary};
+	border: 3px solid ${props => props.theme.secondary};
 `;
 
 const About = ({ theme }) => {
@@ -17,7 +25,7 @@ const About = ({ theme }) => {
 		<Container className={style.container} id="about">
 			<h1 className={style.title}> {t("about.title")} </h1>
 			<div className={style.about}>
-				<img className={style.profilePic} src={profile} alt="Profile pic" />
+				<Profile className={style.profilePic} src={profile} alt="Profile pic" />
 				<div className={style.info}>
 					<h2> {t("about.who")} </h2>
 					<p>	{t("about.description1")} </p>
@@ -34,7 +42,7 @@ const About = ({ theme }) => {
 				</div>
 			</div>
 			<h3> {t("about.skills")} </h3>
-			<Carousel
+			<StyledCarousel
 				className={style.logos}
 				plugins={["infinite", { resolve: autoplayPlugin, options: { interval: 1000 } }, { resolve: slidesToShowPlugin, options: { numberOfSlides: 2 } }]}
 			>
@@ -52,7 +60,7 @@ const About = ({ theme }) => {
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" />
 				<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" />
-			</Carousel>
+			</StyledCarousel>
 		</Container>
 	)
 }

@@ -7,11 +7,11 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	background: ${props => props.theme.background};
-	background-blend-mode: ${props => props.theme.backgroundBlend};
 	color: ${props => props.theme.color};
 `;
 
 const Form = styled.div`
+	background: ${props => props.theme.primary};
 	border: 1px solid ${props => props.theme.color};
 	box-shadow: 0 0 0.4rem ${props => props.theme.secondary};
 	&:hover {
@@ -20,33 +20,29 @@ const Form = styled.div`
 `;
 
 const Input = styled.input`
-	background: ${props => props.theme.color};
-	color: ${props => props.theme.backgroundColor};
-	border: 2px solid ${props => props.theme.backgroundColor};
+	background: #DDDDDD;
+	color: #222831;
+	border: 3px solid ${props => props.theme.primary};
 `;
 
 const Area = styled.textarea`
-	background: ${props => props.theme.color};
-	color: ${props => props.theme.backgroundColor};
-	border: 2px solid ${props => props.theme.backgroundColor};
+	background: #DDDDDD;
+	color: #222831;
+	border: 3px solid ${props => props.theme.primary};
 	resize: vertical;
 	padding: 0.4rem;
-`;
-
-const Label = styled.label`
-	color: ${props => props.theme.backgroundColor};
 `;
 
 const Send = styled.button`
 	padding: 0.5rem;
 	border: none;
-	background: ${props => props.theme.backgroundColor};
+	background: ${props => props.theme.background};
 	border-radius: 1rem;
 	font-weight: 600;
 	cursor: pointer;
 	color: ${props => props.theme.color};
 	&:hover {
-		background-color: ${props => props.theme.primary};
+		background-color: ${props => props.theme.secondary};
 	}
 `;
 
@@ -81,19 +77,19 @@ const Contact = ({ theme }) => {
 				<form onSubmit={handleSubmit} autoComplete="off">
 					<div className={style.formDiv}>
 						<Input id="name" className={style.input} {...register("name")} required />
-						<Label className={style.floatingLabel} htmlFor="name"> {t("contact.name")} </Label>
+						<label className={style.floatingLabel} htmlFor="name"> {t("contact.name")} </label>
 					</div>
 					<div className={style.formDiv}>
 						<Input id="email" className={style.input} {...register("email")} required />
-						<Label className={style.floatingLabel} htmlFor="email"> {t("contact.email")} </Label>
+						<label className={style.floatingLabel} htmlFor="email"> {t("contact.email")} </label>
 					</div>
 					<div className={style.formDiv}>
 						<Input id="subject" className={style.input} {...register("subject")} required />
-						<Label className={style.floatingLabel} htmlFor="subject"> {t("contact.subject")} </Label>
+						<label className={style.floatingLabel} htmlFor="subject"> {t("contact.subject")} </label>
 					</div>
 					<div className={style.formDiv}>
 						<Area id="message" cols="44" rows="10" style={{ resize: "vertical", padding: "0.4rem" }} {...register("text")} required />
-						<Label className={style.floatingLabel} htmlFor="message"> {t("contact.message")} </Label>
+						<label className={style.floatingLabel} htmlFor="message"> {t("contact.message")} </label>
 					</div>
 					<Send> {t("contact.send")} </Send>
 				</form>

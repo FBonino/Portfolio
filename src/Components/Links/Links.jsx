@@ -5,7 +5,7 @@ import { IconContext } from "react-icons/lib";
 import styled from "styled-components";
 
 const Icon = styled.a`
-	background: ${props => props.theme.backgroundColor};
+	background: ${props => props.theme.background};
 	border: 2px solid ${props => props.theme.secondary};
 	&:hover {
 		filter: brightness(1.25);

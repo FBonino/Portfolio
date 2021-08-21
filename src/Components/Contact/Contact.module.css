@@ -31,12 +31,13 @@
 	padding: 0 0.4rem;
 }
 
-.formDiv .floatingLabel {
+.floatingLabel {
 	position: absolute;
 	pointer-events: none;
 	top: 0.4rem;
 	left: 0.4rem;
 	transition: 200ms ease;
+	color: #222831;
 }
 
 .formDiv input:focus ~ .floatingLabel, .formDiv input:not(:focus):valid ~ .floatingLabel, 
