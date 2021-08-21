@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const Profile = styled.img`
-	box-shadow: 0 0 0.75rem ${props => props.theme.primary};
+	box-shadow: 0 0 0.5rem ${props => props.theme.secondary};
 `;
 
 const StyledCarousel = styled(Carousel)`
