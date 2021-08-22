@@ -25,28 +25,37 @@ registerRoute(
   createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
 );
 
-registerRoute(
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.webp'),
-  new StaleWhileRevalidate({
-    cacheName: 'webps',
-    plugins: [
-      new ExpirationPlugin({ maxEntries: 50 }),
-    ],
-  })
-);
+// registerRoute(
+//   ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.webp'),
+//   new StaleWhileRevalidate({
+//     cacheName: 'webps',
+//     plugins: [
+//       new ExpirationPlugin({ maxEntries: 50 }),
+//     ],
+//   })
+// );
 
-registerRoute(
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.svg'),
-  new StaleWhileRevalidate({
-    cacheName: 'svgs',
-    plugins: [
-      new ExpirationPlugin({ maxEntries: 50 }),
-    ],
-  })
-);
+// registerRoute(
+//   ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.svg'),
+//   new StaleWhileRevalidate({
+//     cacheName: 'svgs',
+//     plugins: [
+//       new ExpirationPlugin({ maxEntries: 50 }),
+//     ],
+//   })
+// );
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
+});
+
+self.addEventListener('fetch', function (event) {
+  console.log(event.request.url);
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      return response || fetch(event.request);
+    })
+  );
 });
