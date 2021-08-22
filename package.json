@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@brainhubeu/react-carousel": "^2.0.4",
     "@react-pdf-viewer/core": "^2.7.1",
     "@react-pdf-viewer/default-layout": "^2.7.1",
     "@react-pdf-viewer/theme": "^2.7.1",

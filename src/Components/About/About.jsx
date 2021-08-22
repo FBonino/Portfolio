@@ -1,8 +1,6 @@
 import style from "./About.module.css";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import Carousel, { autoplayPlugin, slidesToShowPlugin } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
 
 const Container = styled.div`
 	background: ${props => props.theme.background};
@@ -11,11 +9,6 @@ const Container = styled.div`
 
 const Profile = styled.img`
 	box-shadow: 0 0 0.5rem ${props => props.theme.secondary};
-`;
-
-const StyledCarousel = styled(Carousel)`
-	background-color: ${props => props.theme.primary};
-	border: 3px solid ${props => props.theme.secondary};
 `;
 
 const About = () => {
@@ -41,10 +34,7 @@ const About = () => {
 				</div>
 			</div>
 			<h3> {t("about.skills")} </h3>
-			<StyledCarousel
-				className={style.logos}
-				plugins={["infinite", { resolve: autoplayPlugin, options: { interval: 1000 } }, { resolve: slidesToShowPlugin, options: { numberOfSlides: 2 } }]}
-			>
+			<div className={style.logos}>
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" />
@@ -59,7 +49,7 @@ const About = () => {
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" />
 				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" />
 				<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" />
-			</StyledCarousel>
+			</div>
 		</Container>
 	)
 }
