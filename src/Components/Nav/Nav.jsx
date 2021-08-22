@@ -129,6 +129,7 @@ const Nav = ({ theme, setTheme, themes }) => {
 							offColor="#FD7014"
 							onHandleColor="#FAF3F3"
 							onColor="#FD7014"
+							aria-label="theme"
 						/>
 						<button className={style.languages} onClick={() => setIsOpen(true)} aria-label="Language">
 							<MdLanguage size="32" color={themes.color} />
