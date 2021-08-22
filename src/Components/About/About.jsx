@@ -35,20 +35,20 @@ const About = () => {
 			</div>
 			<h3> {t("about.skills")} </h3>
 			<div className={style.logos}>
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" style={{ transform: "scale(1.4)" }} />
-				<img src="https://www.nextontop.com/assets/img/services/web/expressjs.svg" background-color="#ffffff" alt="express" style={{ transform: "scale(1.57)" }} />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" />
-				<img src="https://images.tute.io/tute/topic/prisma.png" alt="prisma" style={{ transform: "scale(1.57)", filter: "brightness(3)" }} />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sequelize/sequelize-original.svg" alt="sequelize" />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" />
-				<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" />
-				<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" />
+				<img src="/assets/techs/javascript.svg" alt="javascript" />
+				<img src="/assets/techs/typescript.svg" alt="typescript" />
+				<img src="/assets/techs/react.svg" alt="react" />
+				<img src="/assets/techs/redux.svg" alt="redux" />
+				<img src="/assets/techs/html.svg" alt="html" />
+				<img src="/assets/techs/css.svg" alt="css" />
+				<img src="/assets/techs/nodejs.svg" alt="nodejs" style={{ transform: "scale(1.4)" }} />
+				<img src="/assets/techs/express.svg" alt="express" style={{ transform: "scale(1.57)" }} />
+				<img src="/assets/techs/postgresql.svg" alt="postgresql" />
+				<img src="/assets/techs/prisma.svg" alt="prisma" />
+				<img src="/assets/techs/sequelize.svg" alt="sequelize" />
+				<img src="/assets/techs/python.svg" alt="python" />
+				<img src="/assets/techs/cplusplus.svg" alt="cplusplus" />
+				<img src="/assets/techs/git.svg" alt="git" />
 			</div>
 		</Container>
 	)
