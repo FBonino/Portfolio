@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import './i18n';
 import { BrowserRouter } from 'react-router-dom';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 ReactDOM.render(
   <Suspense fallback={null}>
@@ -13,3 +14,5 @@ ReactDOM.render(
   </Suspense>,
   document.getElementById('root')
 );
+
+serviceWorkerRegistration.register();

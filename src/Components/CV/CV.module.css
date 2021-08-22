@@ -1,6 +1,5 @@
 .container {
 	display: flex;
-	justify-content: space-around;
 	flex-direction: column;
 	align-items: center;
 	min-height: 100vh;
@@ -12,8 +11,6 @@
 	cursor: pointer;
 	padding: 0.5rem;
 	border-radius: 1rem;
-	border: 1px solid grey;
-	background-color: grey;
 	margin: 2rem;
 }
 
@@ -24,4 +21,32 @@
 .pdf {
 	width: 50%;
 	height: 100%;
+}
+
+@media only screen and (max-width: 1366px) {
+	.pdf {
+		width: 70%;
+	}
+}
+
+@media only screen and (max-width: 1366px) {
+	.pdf {
+		width: 80%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.pdf {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.pdf {
+		width: 100%;
+	}
+
+	.link {
+		margin: 5rem 0;
+	}
 }

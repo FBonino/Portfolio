@@ -34,11 +34,13 @@ function App() {
   const logoRef = useRef();
   const subLogo = gsap.utils.selector(logoRef);
 
-  useEffect(async () => {
-    await gsap.to(logoRef.current, { x: "100vh" });
-    await gsap.to(subLogo(".logo"), { rotate: 360 });
-    await gsap.to(logoRef.current, { x: "300vh" });
-    await gsap.to(logoRef.current, { display: "none" });
+  useEffect(() => {
+    (async function showLogo() {
+      await gsap.to(logoRef.current, { x: "100vh" });
+      await gsap.to(subLogo(".logo"), { rotate: 360 });
+      await gsap.to(logoRef.current, { x: "300vh" });
+      await gsap.to(logoRef.current, { display: "none" });
+    })()
   })
 
   return (

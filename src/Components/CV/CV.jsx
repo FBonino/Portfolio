@@ -12,12 +12,22 @@ const Container = styled.div`
 	color: ${props => props.theme.color};
 `;
 
+const StyledLink = styled(Link)`
+	background: ${props => props.theme.color};
+	color: ${props => props.theme.background};
+	&:hover {
+		background: ${props => props.theme.secondary};
+		font-weight: 700;
+		transform: scale(1.05);
+	}
+`;
+
 const CV = () => {
 	const [t] = useTranslation("global");
 
 	return (
 		<Container className={style.container}>
-			<Link to="/" className={style.link} style={{ color: "inherit" }}> {t("cv.back")} </Link>
+			<StyledLink to="/" className={style.link}> {t("cv.back")} </StyledLink>
 			<div className={style.pdf}>
 				<Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
 					<Viewer
