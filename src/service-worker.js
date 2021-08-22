@@ -26,7 +26,7 @@ registerRoute(
 );
 
 registerRoute(
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'),
+  ({ url }) => url.origin === self.location.origin && (url.pathname.endsWith('.png') || url.pathname.endsWith('.svg') || url.pathname.endsWith('.webp')),
   new StaleWhileRevalidate({
     cacheName: 'images',
     plugins: [
