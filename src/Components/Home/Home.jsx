@@ -10,9 +10,10 @@ const Container = styled.div`
 `;
 
 const StyledLink = styled.a`
-	background: ${props => props.theme.secondary};
+	background: ${props => props.theme.color};
 	color: ${props => props.theme.background};
 	&:hover {
+		background: ${props => props.theme.secondary};
 		font-weight: 700;
 		transform: scale(1.05);
 	}
