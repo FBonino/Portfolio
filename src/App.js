@@ -48,9 +48,9 @@ function App() {
 
   useEffect(() => {
     timeline.to(logoRef.current, { x: "100vw" })
-      .to(subLogo("#hexagon"), { duration: 0.5, rotateY: 360 })
+      .to(subLogo("#hexagon"), { duration: 0.25, rotateY: 360 })
       .to(subLogo("#hexagon"), { duration: 0.25, scale: 12 })
-      .to(logoRef.current, { duration: 1, opacity: 0 })
+      .to(logoRef.current, { duration: 0.5, opacity: 0 })
       .to(logoRef.current, { display: "none" });
   })
 
