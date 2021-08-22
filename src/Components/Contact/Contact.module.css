@@ -61,3 +61,17 @@
 		transform: scaleX(0.75) scaleY(0.85);
 	}
 }
+
+@media only screen and (max-width: 300px) {
+	.form {
+		padding: 0.25rem;
+	}
+
+	.input {
+		width: 100vw;
+	}
+
+	.area {
+		width: 100vw;
+	}
+}

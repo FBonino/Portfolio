@@ -29,25 +29,35 @@ const themes = {
   dark: darkTheme
 }
 
+const style = {
+  light: {
+    backgroundColor: "#E4E4E1",
+    backgroundImage: "radial-gradient(at top center, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.03) 100%), linear-gradient(to top, rgba(255,255,255,0.1) 0%, rgba(143,152,157,0.60) 100%)",
+    backgroundBlendMode: "normal, multiply"
+  },
+  dark: {
+    backgroundImage: "linear-gradient(60deg, #29323c 0%, #485563 100%)"
+  }
+}
+
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("Theme") || "light");
+  const timeline = gsap.timeline();
   const logoRef = useRef();
   const subLogo = gsap.utils.selector(logoRef);
 
   useEffect(() => {
-    (async function showLogo() {
-      await gsap.to(logoRef.current, { x: "100vh" });
-      await gsap.to(subLogo(".logo"), { rotate: 360 });
-      await gsap.to(logoRef.current, { x: "300vh" });
-      await gsap.to(logoRef.current, { display: "none" });
-    })()
+    timeline.to(logoRef.current, { x: "100vw" })
+      .to(subLogo("#hexagon"), { duration: 0.5, rotateY: 360 })
+      .to(subLogo("#hexagon"), { duration: 0.25, scale: 12 })
+      .to(logoRef.current, { duration: 1, opacity: 0 })
+      .to(logoRef.current, { display: "none" });
   })
 
   return (
     <div>
-      <div className="logoDiv" ref={logoRef}>
-        <div className="logo">
-          FBF
+      <div id="logoDiv" style={style[theme]} ref={logoRef}>
+        <div id="hexagon">
         </div>
       </div>
       <ThemeProvider theme={themes[theme]}>

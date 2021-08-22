@@ -1,19 +1,50 @@
-.logoDiv {
+#logoDiv {
 	display: flex;
 	height: 100vh;
 	width: 100%;
-	background-image: linear-gradient(to right, #434343 0%, black 100%);
+	background-color: #E4E4E1;
+ 	background-image: radial-gradient(at top center, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.03) 100%), linear-gradient(to top, rgba(255,255,255,0.1) 0%, rgba(143,152,157,0.60) 100%);
+ 	background-blend-mode: normal, multiply;
 	position: absolute;
 	top: 0;
-	left: -100vh;
+	left: -100vw;
 	z-index: 999;
 	justify-content: center;
 	align-items: center;
 }
 
-.logo {
-	font-size: 36;
-	padding: 2rem;
-	color: #FD7014;
-	border: 2px solid #FD7014;
+#hexagon {
+  position: relative;
+  width: 300px; 
+  height: 173.21px;
+  background-color: rgb(253, 112, 20);
+  margin: 86.60px 0;
+  border-left: solid 5px #222831;
+  border-right: solid 5px #222831;
+}
+
+#hexagon:before,
+#hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 212.13px;
+  height: 212.13px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 38.9340px;
+}
+
+#hexagon:before {
+  top: -106.0660px;
+  border-top: solid 7.0711px #222831;
+  border-right: solid 7.0711px #222831;
+}
+
+#hexagon:after {
+  bottom: -106.0660px;
+  border-bottom: solid 7.0711px #222831;
+  border-left: solid 7.0711px #222831;
 }

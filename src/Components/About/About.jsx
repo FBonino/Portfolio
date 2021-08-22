@@ -22,33 +22,66 @@ const About = () => {
 					<h2> {t("about.who")} </h2>
 					<p>	{t("about.description1")} </p>
 					<p>	{t("about.description2")}	</p>
-					<p>	{t("about.description3")}	</p>
-					<div className={style.skills}>
-						<p> ▶ Javascript </p>
-						<p> ▶ React </p>
-						<p> ▶ Node.js </p>
-						<p> ▶ Express.js </p>
-						<p> ▶ PostgreSQL </p>
-						<p> ▶ Typescript </p>
-					</div>
 				</div>
 			</div>
 			<h3> {t("about.skills")} </h3>
 			<div className={style.logos}>
-				<img src="/assets/techs/javascript.svg" alt="javascript" />
-				<img src="/assets/techs/typescript.svg" alt="typescript" />
-				<img src="/assets/techs/react.svg" alt="react" />
-				<img src="/assets/techs/redux.svg" alt="redux" />
-				<img src="/assets/techs/html.svg" alt="html" />
-				<img src="/assets/techs/css.svg" alt="css" />
-				<img src="/assets/techs/nodejs.svg" alt="nodejs" style={{ transform: "scale(1.4)" }} />
-				<img src="/assets/techs/express.svg" alt="express" style={{ transform: "scale(1.57)" }} />
-				<img src="/assets/techs/postgresql.svg" alt="postgresql" />
-				<img src="/assets/techs/prisma.svg" alt="prisma" />
-				<img src="/assets/techs/sequelize.svg" alt="sequelize" />
-				<img src="/assets/techs/python.svg" alt="python" />
-				<img src="/assets/techs/cplusplus.svg" alt="cplusplus" />
-				<img src="/assets/techs/git.svg" alt="git" />
+				<div>
+					<p> Javascript </p>
+					<img src="/assets/techs/javascript.svg" alt="javascript" />
+				</div>
+				<div>
+					<p> Typescript </p>
+					<img src="/assets/techs/typescript.svg" alt="typescript" />
+				</div>
+				<div>
+					<p> React </p>
+					<img src="/assets/techs/react.svg" alt="react" />
+				</div>
+				<div>
+					<p> Redux </p>
+					<img src="/assets/techs/redux.svg" alt="redux" />
+				</div>
+				<div>
+					<p> HTML </p>
+					<img src="/assets/techs/html.svg" alt="html" />
+				</div>
+				<div>
+					<p> CSS </p>
+					<img src="/assets/techs/css.svg" alt="css" />
+				</div>
+				<div>
+					<p> Node.js </p>
+					<img src="/assets/techs/nodejs.svg" alt="nodejs" style={{ transform: "scale(1.4)" }} />
+				</div>
+				<div>
+					<p> Express.js </p>
+					<img src="/assets/techs/express.svg" alt="express" style={{ transform: "scale(1.57)" }} />
+				</div>
+				<div>
+					<p> PostgreSQL </p>
+					<img src="/assets/techs/postgresql.svg" alt="postgresql" />
+				</div>
+				<div>
+					<p> Prisma </p>
+					<img src="/assets/techs/prisma.svg" alt="prisma" />
+				</div>
+				<div>
+					<p> Sequelize </p>
+					<img src="/assets/techs/sequelize.svg" alt="sequelize" />
+				</div>
+				<div>
+					<p> Python </p>
+					<img src="/assets/techs/python.svg" alt="python" />
+				</div>
+				<div>
+					<p> C++ </p>
+					<img src="/assets/techs/cplusplus.svg" alt="cplusplus" />
+				</div>
+				<div>
+					<p> Git </p>
+					<img src="/assets/techs/git.svg" alt="git" />
+				</div>
 			</div>
 		</Container>
 	)

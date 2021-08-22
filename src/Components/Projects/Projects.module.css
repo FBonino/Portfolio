@@ -161,7 +161,7 @@
 
 @media only screen and (max-width: 375px) {
 	.links {
-		padding: 0.25rem 0.75rem;
+		padding: 0.5vh 1vw;
 		transform: scale(0.8);
 	}
 }

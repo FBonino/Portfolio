@@ -88,7 +88,7 @@ const Contact = () => {
 						<label className={style.floatingLabel} htmlFor="subject"> {t("contact.subject")} </label>
 					</div>
 					<div className={style.formDiv}>
-						<Area id="message" cols="44" rows="10" style={{ resize: "vertical", padding: "0.4rem" }} {...register("text")} required />
+						<Area className={style.area} id="message" cols="44" rows="10" style={{ resize: "vertical", padding: "0.4rem" }} {...register("text")} required />
 						<label className={style.floatingLabel} htmlFor="message"> {t("contact.message")} </label>
 					</div>
 					<Send> {t("contact.send")} </Send>
