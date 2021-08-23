@@ -1,5 +1,5 @@
 import { clientsClaim } from 'workbox-core';
-import { ExpirationPlugin } from 'workbox-expiration';
+import { ExpirationPlugin, CacheExpiration } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
@@ -29,13 +29,13 @@ registerRoute(
 registerRoute(
   ({ request }) => request.destination === 'image',
   new CacheFirst({
-    cacheName: 'images',
+    cacheName: 'image-cache',
     plugins: [
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxEntries: 60,
+        maxEntries: 50,
         maxAgeSeconds: 30 * 24 * 60 * 60,
       }),
     ],
@@ -47,3 +47,12 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 });
+
+const cacheName = 'workbox-precache-v2-https://portfolio-fbonino.vercel.app/';
+const expirationManager = new CacheExpiration(
+  cacheName,
+  {
+    maxAgeSeconds: 24 * 60 * 60,
+    maxEntries: 30,
+  }
+);
