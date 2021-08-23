@@ -37,10 +37,10 @@ const Projects = () => {
 						<Card className={style.cardDiv}>
 							<h1 className={style.projectTitle}> AltaBirra </h1>
 							<div className={style.linksDiv}>
-								<a href="https://github.com/FBonino/Funtivity" className={style.links}>
+								<a href="https://github.com/LeaMarco/AltaBirra" className={style.links}>
 									<FaGithub /> {t("projects.more")}
 								</a>
-								<a href="https://alta-birra.vercel.app" className={style.links}>
+								<a href="https://altabirra.vercel.app" className={style.links}>
 									<FiArrowUpRight /> {t("projects.visit")}
 								</a>
 							</div>
@@ -53,7 +53,7 @@ const Projects = () => {
 							</Techs>
 						</Card>
 						<div className={style.cardImage}>
-							<img className={style.projectImage} src={"/assets/countries.webp"} alt="" />
+							<img className={style.projectImage} src={"/assets/birra.webp"} alt="" />
 						</div>
 					</Project>
 					<Project className={style.project}>
