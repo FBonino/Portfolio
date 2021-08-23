@@ -59,6 +59,7 @@
 	.form {
 		padding: 1rem;
 		transform: scaleX(0.75) scaleY(0.85);
+		margin: 1rem 0;
 	}
 }
 
