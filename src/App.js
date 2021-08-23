@@ -1,4 +1,4 @@
-import { useState, lazy, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
 import { gsap } from "gsap";
@@ -8,7 +8,7 @@ import About from './Components/About/About';
 import Home from './Components/Home/Home';
 import Nav from './Components/Nav/Nav';
 import Projects from './Components/Projects/Projects';
-const CV = lazy(() => import('./Components/CV/CV'));
+import CV from './Components/CV/CV';
 
 const lightTheme = {
   background: "#DDDDDD",
