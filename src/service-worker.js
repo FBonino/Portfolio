@@ -2,12 +2,12 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { CacheFirst } from 'workbox-strategies';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 
 clientsClaim();
 
-// precacheAndRoute(self.__WB_MANIFEST);
+precacheAndRoute(self.__WB_MANIFEST);
 
 const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
 registerRoute(
@@ -24,12 +24,6 @@ registerRoute(
     return true;
   },
   createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
-);
-
-registerRoute(
-  ({ request }) => request.destination === 'script' ||
-    request.destination === 'style',
-  new StaleWhileRevalidate()
 );
 
 registerRoute(
