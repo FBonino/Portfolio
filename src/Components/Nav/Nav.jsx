@@ -1,4 +1,4 @@
-import { lazy, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-scroll";
 import ReactSwitch from "react-switch";
 import style from "./Nav.module.css";
@@ -10,9 +10,9 @@ import { MdLanguage } from "react-icons/md";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
-const Modal = lazy(() => import("./Modal"));
-const NavModal = lazy(() => import("./ModalResponsive"));
-const Links = lazy(() => import("../Links/Links"));
+import Modal from "./Modal";
+import NavModal from "./ModalResponsive";
+import Links from "../Links/Links";
 
 const Container = styled.nav`
 	background: ${props => props.theme.background};

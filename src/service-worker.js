@@ -1,5 +1,5 @@
 import { clientsClaim } from 'workbox-core';
-import { ExpirationPlugin, CacheExpiration } from 'workbox-expiration';
+import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
@@ -47,12 +47,3 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 });
-
-const cacheName = 'workbox-precache-v2-https://portfolio-fbonino.vercel.app/';
-const expirationManager = new CacheExpiration(
-  cacheName,
-  {
-    maxAgeSeconds: 24 * 60 * 60,
-    maxEntries: 30,
-  }
-);
